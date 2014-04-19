@@ -6,6 +6,7 @@ private:
 	float angle = 0;
 	float speed = 180;
 	int lastTime = 0;
+	
 
 public:
 	Example1();

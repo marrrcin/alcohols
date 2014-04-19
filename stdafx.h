@@ -19,6 +19,4 @@
 #include "glm\gtc\type_ptr.hpp"
 #include <string>
 
-
-
 // TODO: reference additional headers your program requires here

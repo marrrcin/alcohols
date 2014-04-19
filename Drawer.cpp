@@ -18,6 +18,7 @@ Drawer::~Drawer()
 void Drawer::CreateObjectsToDraw()
 {
 	this->objectsToDraw["example1"] = new Example1();
+	auto g = (Example1*)objectsToDraw["example1"];
 }
 
 void Drawer::Display()

@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "Example1.h"
 
-
 Example1::Example1()
 {
+	
 }
 
 
@@ -11,8 +11,12 @@ Example1::~Example1()
 {
 }
 
+
 void Example1::Draw()
 {
+
+
+
 	//Obliczenie macierzy rzutowania
 	glm::mat4 P = glm::perspective(50.0f, 1.0f, 1.0f, 50.0f);
 

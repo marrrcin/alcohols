@@ -5,6 +5,12 @@
 #include "Drawer.h"
 #include "OpenGLInitializer.h"
 
+
+
+using namespace std;
+
+
+
 OpenGLInitializer* OpenGLInitializer::self;
 int _tmain(int argc, char* argv[])
 {
@@ -13,6 +19,10 @@ int _tmain(int argc, char* argv[])
 	Drawer *drawer = new Drawer();
 
 	openGL.SetDrawer(drawer);
+
+
+
+
 
 	openGL.StartMainLoop();
 
