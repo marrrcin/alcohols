@@ -12,13 +12,12 @@ private:
 	int lastMouseX;
 	int lastMouseY;
 
-	int tmpDifference;
-
-	float CalculateCameraZDifference(int deltaX,int windowWidth);
-	void CalculateLookAtAngle();
-	bool doneY;
+	glm::vec3 temp;
+	glm::vec3 temp2;
 
 	float toRad;
+	int difference;
+
 public:
 	EventHandler();
 	~EventHandler();

@@ -32,12 +32,13 @@ void Drawer::Display()
 	//Obliczenie macierzy rzutowania
 	//kat widzenia , stosunek wymiarow okna,plaszczyzna odcinania bliska, daleka, 
 	glm::mat4 P = glm::perspective(this->params->perspectiveAngle, 16.0f/9.0f, 1.0f, 50.0f);
-	P = glm::rotate(P,this->params->cameraRotation,glm::vec3(0.0f,1.0f,0.0f));
+	//P = glm::rotate(P,this->params->cameraRotation,glm::vec3(0.0f,1.0f,0.0f));
 	//Obliczenie macierzy widoku (de fact ustawienie kamery na scenie);
 	glm::mat4 V = glm::lookAt(
-		glm::vec3(this->params->cameraX, this->params->cameraY, this->params->cameraZ), //pozycja kamery
-		glm::vec3(this->params->lookAtX,this->params->lookAtY,this->params->lookAtZ), //"CO JA PACZE"
-		glm::vec3(0.0f, 1.0f, 0.0f));
+		this->params->observer, //pozycja kamery
+		this->params->center, //"CO JA PACZE"
+		this->params->nose);
+	//V = glm::translate(V,glm::vec3(this->params->cameraX,this->params->cameraY,this->params->cameraZ));
 	//V = glm::rotate(V,this->params->cameraRotation,glm::vec3(0.0f,1.0f,0.0f));
 	this->PassMatrixesToAllObjects(&V, &P);
 

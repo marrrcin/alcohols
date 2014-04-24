@@ -48,7 +48,7 @@ void OpenGLInitializer::SetEventHandler(EventHandler *eventHandler)
 	glutSpecialUpFunc(OpenGLInitializer::SpecialKeyUpEventHandler);
 
 	//myszka
-	//glutPassiveMotionFunc(OpenGLInitializer::MouseMove);
+	glutPassiveMotionFunc(OpenGLInitializer::MouseMove);
 }
 
 void OpenGLInitializer::StartMainLoop()

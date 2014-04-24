@@ -12,7 +12,6 @@ EventHandler::EventHandler()
 
 	this->lastMouseX=1024>>1;
 	this->lastMouseY=576>>1;
-	this->tmpDifference=0;
 
 	this->toRad= 3.14159265/180.0;
 }
@@ -24,62 +23,47 @@ EventHandler::~EventHandler()
 
 void EventHandler::KeyDown(unsigned char c, int x, int y)
 {
-	float tangent = abs(tan(toRad*this->params->cameraRotation));
-	float diff=0;
+	glm::vec3 center = this->params->center;
+	glm::vec3 observer = this->params->observer;
+	glm::vec3 nose = this->params->nose;
+	
 	if(c=='w')
 	{
-		diff=this->params->cameraZ+this->cameraSpeed;
-		this->params->cameraZ+=this->cameraSpeed;
-
-		//this->params->lookAtZ+=this->cameraSpeed;
-		if(this->params->cameraRotation<0)
-		{
-			this->params->cameraX+=this->cameraSpeed * tangent;
-			//this->params->lookAtX-=this->cameraSpeed * tangent;
-		}
-			
-		else
-		{
-			this->params->cameraX-=this->cameraSpeed * tangent;
-			//this->params->lookAtX+=this->cameraSpeed * tangent;
-		}
+		this->temp = glm::normalize(glm::vec3(center.x,observer.y,center.z)-observer);
+		this->params->observer+=this->temp*this->cameraSpeed;
+		this->params->center+=this->temp*this->cameraSpeed;
 	}
 	else if(c=='s')
 	{
-		this->params->cameraZ-=this->cameraSpeed;
-		//this->params->lookAtZ-=this->cameraSpeed;
-		if(this->params->cameraRotation<0)
-		{
-			this->params->cameraX-=this->cameraSpeed * tangent;
-			//this->params->lookAtX+=this->cameraSpeed * tangent;
-		}
-			
-		else
-		{
-			this->params->cameraX+=this->cameraSpeed * tangent;
-			//this->params->lookAtX-=this->cameraSpeed * tangent;
-		}
-
-			
-		//this->params->cameraX+=this->cameraSpeed * -this->CalculateLookAtAngle();
+		this->temp = glm::normalize(glm::vec3(center.x,observer.y,center.z)-observer);
+		this->params->observer-=this->temp*this->cameraSpeed;
+		this->params->center-=this->temp*this->cameraSpeed;
+	}
+	else if(c=='d')
+	{
+		this->temp = glm::normalize(center-observer);
+		this->temp2 = glm::cross(nose,this->temp);
+		this->params->observer-=this->temp2*this->cameraSpeed;
+		this->params->center-=this->temp2*this->cameraSpeed;
+	}
+	else if(c=='a')
+	{
+		this->temp = glm::normalize(center-observer);
+		this->temp2 = glm::cross(nose,this->temp);
+		this->params->observer+=this->temp2*this->cameraSpeed;
+		this->params->center+=this->temp2*this->cameraSpeed;
 	}
 	else if(c=='q')
 	{
 		this->params->cameraRotation-=2.0f;
-		if(this->params->cameraRotation<-360.0f)
-			this->params->cameraRotation=0.0f;
-		//this->CalculateLookAtAngle();
+		/*if(this->params->cameraRotation<-360.0)
+			this->params->cameraRotation=0.0f;*/
 
 	}
 	else if(c=='e')
 	{
 		this->params->cameraRotation+=2.0f;
-		if(this->params->cameraRotation>360.0f)
-			this->params->cameraRotation=0.0f;
-		//this->CalculateLookAtAngle();
 	}
-
-	printf("[%f]camX %f , camZ %f | lookX %f , lookZ %f\n",this->params->cameraRotation,this->params->cameraX,this->params->cameraZ,this->params->lookAtX,this->params->lookAtZ);
 }
 
 void EventHandler::KeyUp(unsigned char c, int x, int y)
@@ -102,43 +86,29 @@ void EventHandler::SpecialKeyUp(int c,int x,int y)
 
 void EventHandler::MouseMove(int x,int y)
 {
-	printf("[%d,%d]\n",x,y);
-
-	if(!doneY)
-	{
-		this->tmpDifference=this->lastMouseY-y;
-	
-		if(this->tmpDifference>0)
-		{
-			if(this->params->lookAtY<this->cameraYrange)
-				this->params->lookAtY+=this->mouseSpeed;
-		}
-		else
-		{
-			if(this->params->lookAtY>-this->cameraYrange)
-				this->params->lookAtY-=this->mouseSpeed;
-		}
-		doneY=true;
-	}
-	else
-	{
-		this->tmpDifference=this->lastMouseX-x;
-		if(this->tmpDifference>0)
-		{
-			this->params->lookAtX+=2*this->mouseSpeed;
-		}
-		else
-		{
-			this->params->lookAtX-=2*this->mouseSpeed;
-		}
-		doneY=false;
-	}
-
-	
-	
-
-	this->lastMouseY=y;
+	this->difference=this->lastMouseX-x;
 	this->lastMouseX=x;
+	if(this->difference!=0)
+	{
+		//poziomo
+		glm::mat4 rotation = glm::translate(glm::mat4(1.0f),this->params->observer);
+		rotation = glm::rotate(rotation,difference*(this->cameraSpeed),this->params->nose);
+		rotation = glm::translate(rotation,-this->params->observer);
+		this->params->center=glm::vec3(rotation*glm::vec4(this->params->center,1.0f));
+	}
+
+	this->difference=this->lastMouseY-y;
+	this->lastMouseY=y;
+	if(this->difference!=0)
+	{
+		//pionowo
+		this->params->center.y+=difference;
+		if(this->params->center.y>90.0f)
+			this->params->center.y=90.0f;
+		else if(this->params->center.y<-90.0f)
+			this->params->center.y=-90.0f;
+
+	}
 
 	//centrowanie myszki
 	if(this->lastMouseX<(1024>>1)-20 || this->lastMouseX>(1024>>1)+20)
@@ -152,29 +122,8 @@ void EventHandler::MouseMove(int x,int y)
 		glutWarpPointer(this->lastMouseX,576>>1);
 		this->lastMouseY=576>>1;
 	}
-
-		
 	
 	
 }
 
 
-void EventHandler::CalculateLookAtAngle()
-{
-	//float lookAtX = this->params->lookAtX;
-	//float lookAtZ = this->params->lookAtZ;
-
-	//float camX = this->params->cameraX;
-	//float camZ = this->params->cameraZ;
-
-
-	//float toRad = this->pi /180.0;
-	//float sinx = sin(this->params->cameraRotation *toRad);
-	//float cosx = cos(this->params->cameraRotation * toRad);
-	//float x = (lookAtX*cosx)-(lookAtZ*sinx);
-	//float z = (lookAtX*sinx)+(lookAtZ*cosx);
-
-	//this->params->lookAtX=x;
-	//this->params->lookAtZ=z;
-	//printf("lookAt x=%f , z=%f\n",x,z);
-}
