@@ -29,14 +29,30 @@ public:
 		self->drawer->PrepareNextFrame();
 	}
 
-	static void KeyDownEventHandler(int c, int x, int y)
+	static void KeyDownEventHandler(unsigned char c, int x, int y)
 	{
 		self->events->KeyDown(c,x,y);
 	}
 
-	static void KeyUpEventHandler(int c, int x, int y)
+	static void KeyUpEventHandler(unsigned char c, int x, int y)
 	{
 		self->events->KeyUp(c,x,y);
 	}
+
+	static void SpecialKeyUpEventHandler(int c,int x,int y)
+	{
+		self->events->SpecialKeyUp(c,x,y);
+	}
+
+	static void SpecialKeyDownEventHandler(int c,int x,int y)
+	{
+		self->events->SpecialKeyDown(c,x,y);	
+	}
+
+	static void MouseMove(int x,int y)
+	{
+		self->events->MouseMove(x,y);
+	}
+
 };
 

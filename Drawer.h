@@ -1,5 +1,6 @@
 #pragma once
 #include "Model.h"
+#include "EventParameters.h"
 class Drawer
 {
 protected:
@@ -14,5 +15,7 @@ public:
 	void CreateObjectsToDraw();
 
 	std::map<std::string, Model*> objectsToDraw;
+
+	EventParameters *params;
 };
 

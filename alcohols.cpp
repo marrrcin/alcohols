@@ -15,10 +15,16 @@ OpenGLInitializer* OpenGLInitializer::self;
 int _tmain(int argc, char* argv[])
 {
 	OpenGLInitializer openGL;
-	openGL.Initialize(800, 600, "Wirtualna galeria alkoholi", argc, argv);
-	Drawer *drawer = new Drawer();
+	openGL.Initialize(1024, 576, "Wirtualna galeria alkoholi", argc, argv);
 
+	Drawer *drawer = new Drawer();
 	openGL.SetDrawer(drawer);
+
+	EventHandler *eventHandler = new EventHandler();
+	EventParameters *eventParameters = new EventParameters();
+	eventHandler->params=eventParameters;
+	drawer->params=eventParameters;
+	openGL.SetEventHandler(eventHandler);
 
 
 
@@ -28,7 +34,8 @@ int _tmain(int argc, char* argv[])
 
 
 	delete drawer;
-	
+	delete eventHandler;
+	delete eventParameters;
 	return 0;
 }
 

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Drawer.h"
 #include "Example1.h"
-
+#include "RoomModel.h"
 
 Drawer::Drawer()
 {
@@ -19,25 +19,26 @@ Drawer::~Drawer()
 
 void Drawer::CreateObjectsToDraw()
 {
-	auto object1 = new Example1();
-	this->objectsToDraw["example1"] = object1;
+	auto object1 = new RoomModel();
+	this->objectsToDraw["room"] = object1;
 }
 
 void Drawer::Display()
 {
 
 	//Wyczyszczenie okna
-	glClearColor(0.5, -0.5, 0, 1);
+	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	//Obliczenie macierzy rzutowania
-	glm::mat4 P = glm::perspective(50.0f, 1.0f, 1.0f, 50.0f);
-
+	//kat widzenia , stosunek wymiarow okna,plaszczyzna odcinania bliska, daleka, 
+	glm::mat4 P = glm::perspective(this->params->perspectiveAngle, 16.0f/9.0f, 1.0f, 50.0f);
+	P = glm::rotate(P,this->params->cameraRotation,glm::vec3(0.0f,1.0f,0.0f));
 	//Obliczenie macierzy widoku (de fact ustawienie kamery na scenie);
 	glm::mat4 V = glm::lookAt(
-		glm::vec3(0.0f, 0.0f, -30.0f), //pozycja kamery
-		glm::vec3(0.0f, 0.0f, 0.0f),
+		glm::vec3(this->params->cameraX, this->params->cameraY, this->params->cameraZ), //pozycja kamery
+		glm::vec3(this->params->lookAtX,this->params->lookAtY,this->params->lookAtZ), //"CO JA PACZE"
 		glm::vec3(0.0f, 1.0f, 0.0f));
-
+	//V = glm::rotate(V,this->params->cameraRotation,glm::vec3(0.0f,1.0f,0.0f));
 	this->PassMatrixesToAllObjects(&V, &P);
 
 
@@ -47,7 +48,7 @@ void Drawer::Display()
 
 	//Przygotowanie do ³adowania macierzy widoku i modelu
 	glMatrixMode(GL_MODELVIEW);
-	this->objectsToDraw["example1"]->Draw();
+	this->objectsToDraw["room"]->Draw();
 	
 
 
@@ -57,7 +58,7 @@ void Drawer::Display()
 
 void Drawer::PrepareNextFrame()
 {
-	this->objectsToDraw["example1"]->NextFrame();
+	this->objectsToDraw["room"]->NextFrame();
 	glutPostRedisplay();
 }
 

@@ -40,8 +40,15 @@ void OpenGLInitializer::SetEventHandler(EventHandler *eventHandler)
 {
 	this->events = eventHandler;
 	glewInit();
-	glutSpecialFunc(OpenGLInitializer::KeyDownEventHandler);
-	glutSpecialUpFunc(OpenGLInitializer::KeyUpEventHandler);
+	
+	//obsluga klawiatury
+	glutKeyboardFunc(OpenGLInitializer::KeyDownEventHandler);
+	glutKeyboardUpFunc(OpenGLInitializer::KeyUpEventHandler);
+	glutSpecialFunc(OpenGLInitializer::SpecialKeyDownEventHandler);
+	glutSpecialUpFunc(OpenGLInitializer::SpecialKeyUpEventHandler);
+
+	//myszka
+	//glutPassiveMotionFunc(OpenGLInitializer::MouseMove);
 }
 
 void OpenGLInitializer::StartMainLoop()

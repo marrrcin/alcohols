@@ -14,20 +14,7 @@ Example1::~Example1()
 
 void Example1::Draw()
 {
-	//Obliczenie macierzy rzutowania
-	glm::mat4 *P = this->perspectiveMatrix;
-	glm::mat4 *V = this->viewMatrix;
-	glMatrixMode(GL_PROJECTION);
-	glLoadMatrixf(glm::value_ptr(*P));
-	glMatrixMode(GL_MODELVIEW);
-	glm::mat4 M = glm::mat4(1.0f);
-	M = glm::rotate(M,47.0f, glm::vec3(0.0f, 1.0f, 0.0f));
-	glLoadMatrixf(glm::value_ptr(*V*M));
-
-	glColor3f(0.0f, 0.5f, 0.0f);
-
-	this->RenderObject();
-
+	
 	//Przygotowanie do ³adowania macierzy widoku i modelu
 	//glMatrixMode(GL_MODELVIEW);
 

@@ -103,9 +103,11 @@
     <ClCompile Include="detailed_cube.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="EventParameters.cpp" />
     <ClCompile Include="Example1.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="OpenGLInitializer.cpp" />
+    <ClCompile Include="RoomModel.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="tga.cpp" />
   </ItemGroup>
@@ -115,9 +117,11 @@
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="Drawing.h" />
     <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="EventParameters.h" />
     <ClInclude Include="Example1.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="OpenGLInitializer.h" />
+    <ClInclude Include="RoomModel.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="tga.h" />
   </ItemGroup>
