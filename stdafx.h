@@ -6,8 +6,6 @@
 #pragma once
 
 #include <map>
-#include "Example1.h"
-#include "Model.h"
 #include <stdio.h>
 #include <tchar.h>
 #include <windows.h> //Wymagane dla implementacji OpenGL w Visual Studio.
@@ -18,5 +16,8 @@
 #include "glm\gtc\matrix_transform.hpp"
 #include "glm\gtc\type_ptr.hpp"
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
 
 // TODO: reference additional headers your program requires here

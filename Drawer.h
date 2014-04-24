@@ -1,7 +1,9 @@
 #pragma once
+#include "Model.h"
 class Drawer
 {
-	
+protected:
+	virtual void PassMatrixesToAllObjects(glm::mat4 *viewMatrix, glm::mat4 *pMatrix);
 public:
 	Drawer();
 	~Drawer();

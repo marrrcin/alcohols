@@ -1,5 +1,5 @@
-2014/04/19-20:45:51.980 20e0 Recovering log #6
-2014/04/19-20:45:51.981 20e0 Level-0 table #8: started
-2014/04/19-20:45:51.994 20e0 Level-0 table #8: 3066 bytes OK
-2014/04/19-20:45:52.004 20e0 Delete type=0 #6
-2014/04/19-20:45:52.005 20e0 Delete type=3 #4
+2014/04/24-10:51:31.757 1a84 Recovering log #9
+2014/04/24-10:51:31.758 1a84 Level-0 table #11: started
+2014/04/24-10:51:31.761 1a84 Level-0 table #11: 9895 bytes OK
+2014/04/24-10:51:31.766 1a84 Delete type=0 #9
+2014/04/24-10:51:31.766 1a84 Delete type=3 #7

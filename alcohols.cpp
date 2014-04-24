@@ -15,7 +15,7 @@ OpenGLInitializer* OpenGLInitializer::self;
 int _tmain(int argc, char* argv[])
 {
 	OpenGLInitializer openGL;
-	openGL.Initialize(800, 480, "Wirtualna galeria alkoholi", argc, argv);
+	openGL.Initialize(800, 600, "Wirtualna galeria alkoholi", argc, argv);
 	Drawer *drawer = new Drawer();
 
 	openGL.SetDrawer(drawer);

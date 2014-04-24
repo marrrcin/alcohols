@@ -1,45 +1,47 @@
 ﻿<RecentFiles>
   <RecentFiles>
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="32" fromTop="1" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:tga.cpp" caret="495" fromTop="9" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.h" caret="606" fromTop="20" />
-    <File id="F300DC1B-E643-4CCB-80EE-A7F840B07500/f:glm.h" caret="393" fromTop="0" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="383" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="370" fromTop="12" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="44" fromTop="2" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="74" fromTop="3" />
-    <File id="F300DC1B-E643-4CCB-80EE-A7F840B07500/f:glew.h" caret="4113" fromTop="11" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.h" caret="0" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.h" caret="531" fromTop="13" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="313" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.cpp" caret="534" fromTop="24" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="410" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1248" fromTop="53" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="239" fromTop="2" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.h" caret="32" fromTop="1" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.h" caret="196" fromTop="7" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1360" fromTop="23" />
   </RecentFiles>
   <RecentEdits>
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="19" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="26" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="23" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="28" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="9" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="24" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="32" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="144" fromTop="13" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="145" fromTop="16" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="438" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="182" fromTop="7" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="114" fromTop="32" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="152" fromTop="6" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="25" fromTop="2" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="179" fromTop="32" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="74" fromTop="12" />
-    <File id="F300DC1B-E643-4CCB-80EE-A7F840B07500/f:glm.h" caret="393" fromTop="8" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.h" caret="180" fromTop="6" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.h" caret="606" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="181" fromTop="10" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="156" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="74" fromTop="6" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="370" fromTop="12" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="114" fromTop="14" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="428" fromTop="24" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="310" fromTop="19" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="44" fromTop="2" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="74" fromTop="3" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="2741" fromTop="18" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="410" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="948" fromTop="28" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="2741" fromTop="23" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="138" fromTop="6" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="499" fromTop="25" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="499" fromTop="16" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="20" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="20" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1525" fromTop="29" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1408" fromTop="29" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="930" fromTop="22" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="501" fromTop="10" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="899" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="781" fromTop="11" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="581" fromTop="18" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="703" fromTop="23" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1351" fromTop="11" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1617" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="502" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1825" fromTop="12" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="287" fromTop="6" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1248" fromTop="2" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.cpp" caret="534" fromTop="24" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="413" fromTop="8" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="493" fromTop="15" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="272" fromTop="10" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1264" fromTop="16" />
   </RecentEdits>
 </RecentFiles>
