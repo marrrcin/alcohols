@@ -3,7 +3,7 @@
 
 Example1::Example1()
 {
-	this->LoadModelFromObjFile("monkey2.obj");
+	this->LoadModelFromObjFile("room.obj");
 }
 
 
@@ -21,7 +21,7 @@ void Example1::Draw()
 	glLoadMatrixf(glm::value_ptr(*P));
 	glMatrixMode(GL_MODELVIEW);
 	glm::mat4 M = glm::mat4(1.0f);
-	M = glm::rotate(M,180.0f, glm::vec3(0.0f, 1.0f, 0.0f));
+	M = glm::rotate(M,47.0f, glm::vec3(0.0f, 1.0f, 0.0f));
 	glLoadMatrixf(glm::value_ptr(*V*M));
 
 	glColor3f(0.0f, 0.5f, 0.0f);
@@ -57,10 +57,5 @@ void Example1::Draw()
 
 void Example1::NextFrame()
 {
-	int actTime = glutGet(GLUT_ELAPSED_TIME);
-	int interval = actTime - lastTime;
-	lastTime = actTime;
-	angle += speed*interval / 1000.0;
-	if (angle>360) angle -= 360;
-	
+//
 }
