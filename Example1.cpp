@@ -37,21 +37,21 @@ void Example1::Draw()
 //	glMaterialfv(GL_FRONT_AND_BACK,GL_DIFFUSE,this->material.diffuse);
 //	glMaterialfv(GL_FRONT_AND_BACK,GL_ALPHA,&this->material.dissolve);
 //
-	  //GLfloat no_mat[] = { 0.0, 0.0, 0.0, 1.0 };
-   //GLfloat mat_ambient[] = { 0.7, 0.7, 0.7, 1.0 };
-   //GLfloat mat_ambient_color[] = { 0.8, 0.8, 0.2, 1.0 };
-   //GLfloat mat_diffuse[] = { 0.1, 0.5, 0.8, 1.0 };
-   //GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };
-   //GLfloat no_shininess[] = { 0.0 };
-   //GLfloat low_shininess[] = { 5.0 };
-   //GLfloat high_shininess[] = { 100.0 };
-   //GLfloat mat_emission[] = {0.3, 0.2, 0.2, 0.0};
+	/*  GLfloat no_mat[] = { 0.0, 0.0, 0.0, 1.0 };
+   GLfloat mat_ambient[] = { 0.7, 0.7, 0.7, 1.0 };
+   GLfloat mat_ambient_color[] = { 0.8, 0.8, 0.2, 1.0 };
+   GLfloat mat_diffuse[] = { 0.1, 0.5, 0.8, 1.0 };
+   GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+   GLfloat no_shininess[] = { 0.0 };
+   GLfloat low_shininess[] = { 5.0 };
+   GLfloat high_shininess[] = { 100.0 };
+   GLfloat mat_emission[] = {0.3, 0.2, 0.2, 0.0};
 
-   //glMaterialfv(GL_FRONT, GL_AMBIENT, no_mat);
-   //glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
-   //glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
-   //glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
-   //glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);
+   glMaterialfv(GL_FRONT, GL_AMBIENT, no_mat);
+   glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+   glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+   glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
+   glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);*/
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 glEnable( GL_BLEND );
 	//glMaterialfv(GL_FRONT_AND_BACK,

@@ -1,0 +1,20 @@
+# Blender MTL File: 'Interior_visualization - Kopia - Kopia.blend'
+# Material Count: 2
+
+newmtl BG
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl Glas
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.612850 0.800000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.692064
+illum 1

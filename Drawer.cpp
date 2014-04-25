@@ -56,6 +56,10 @@ void Drawer::Display()
 	
 	//glLightfv(GL_LIGHT3,GL_AMBIENT,ambientColor);
 	
+	if(this->params->light3on)
+		glEnable(GL_LIGHT3);
+	else
+		glDisable(GL_LIGHT3);
 	this->objectsToDraw["room"]->Draw();
 	this->objectsToDraw["glass"]->Draw();
 
