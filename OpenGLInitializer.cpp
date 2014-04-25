@@ -23,7 +23,10 @@ bool OpenGLInitializer::Initialize(int screenWidth, int screenHeight,std::string
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	glEnable(GL_COLOR_MATERIAL);
+	
+	//glLightfv(GL_LIGHT3,GL_AMBIENT,ambientColor);
+	
+	//glEnable(GL_COLOR_MATERIAL);
 	return true;
 }
 

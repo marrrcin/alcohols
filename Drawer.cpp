@@ -2,6 +2,7 @@
 #include "Drawer.h"
 #include "Example1.h"
 #include "RoomModel.h"
+#include "Glass.h"
 
 Drawer::Drawer()
 {
@@ -21,27 +22,28 @@ void Drawer::CreateObjectsToDraw()
 {
 	auto object1 = new RoomModel();
 	this->objectsToDraw["room"] = object1;
+
+	auto object2 = new Glass();
+	this->objectsToDraw["glass"]=object2;
 }
 
 void Drawer::Display()
 {
 
 	//Wyczyszczenie okna
-	glClearColor(0, 0, 0, 1);
+	glClearColor(0,0,0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	//Obliczenie macierzy rzutowania
 	//kat widzenia , stosunek wymiarow okna,plaszczyzna odcinania bliska, daleka, 
-	glm::mat4 P = glm::perspective(this->params->perspectiveAngle, 16.0f/9.0f, 1.0f, 50.0f);
-	//P = glm::rotate(P,this->params->cameraRotation,glm::vec3(0.0f,1.0f,0.0f));
+	glm::mat4 P = glm::perspective(this->params->perspectiveAngle, 16.0f/9.0f, 1.0f, 150.0f);
+
 	//Obliczenie macierzy widoku (de fact ustawienie kamery na scenie);
 	glm::mat4 V = glm::lookAt(
 		this->params->observer, //pozycja kamery
 		this->params->center, //"CO JA PACZE"
 		this->params->nose);
-	//V = glm::translate(V,glm::vec3(this->params->cameraX,this->params->cameraY,this->params->cameraZ));
-	//V = glm::rotate(V,this->params->cameraRotation,glm::vec3(0.0f,1.0f,0.0f));
 	this->PassMatrixesToAllObjects(&V, &P);
-
 
 	//Za³adowanie macierzy rzutowania do OpenGL
 	glMatrixMode(GL_PROJECTION);
@@ -49,12 +51,18 @@ void Drawer::Display()
 
 	//Przygotowanie do ³adowania macierzy widoku i modelu
 	glMatrixMode(GL_MODELVIEW);
-	this->objectsToDraw["room"]->Draw();
 	
-
+	
+	
+	//glLightfv(GL_LIGHT3,GL_AMBIENT,ambientColor);
+	
+	this->objectsToDraw["room"]->Draw();
+	this->objectsToDraw["glass"]->Draw();
 
 	//Przerzucenie tylnego bufora na przedni
 	glutSwapBuffers();
+
+	
 }
 
 void Drawer::PrepareNextFrame()

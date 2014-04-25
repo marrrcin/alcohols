@@ -4,6 +4,7 @@
 
 Model::Model()
 {
+
 }
 
 
@@ -117,4 +118,9 @@ void Model::SetMatrixes(glm::mat4 *viewMatrix, glm::mat4 *perspectiveMatrix)
 {
 	this->viewMatrix = viewMatrix;
 	this->perspectiveMatrix = perspectiveMatrix;
+}
+
+void Model::LoadMaterialFromMtlFile(std::string fileName)
+{
+
 }

@@ -105,6 +105,7 @@
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="EventParameters.cpp" />
     <ClCompile Include="Example1.cpp" />
+    <ClCompile Include="Glass.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="OpenGLInitializer.cpp" />
     <ClCompile Include="RoomModel.cpp" />
@@ -119,6 +120,7 @@
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="EventParameters.h" />
     <ClInclude Include="Example1.h" />
+    <ClInclude Include="Glass.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="OpenGLInitializer.h" />
     <ClInclude Include="RoomModel.h" />

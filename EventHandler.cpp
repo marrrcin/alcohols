@@ -53,16 +53,10 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 		this->params->observer+=this->temp2*this->cameraSpeed;
 		this->params->center+=this->temp2*this->cameraSpeed;
 	}
-	else if(c=='q')
+	else if(c=='c')
 	{
-		this->params->cameraRotation-=2.0f;
-		/*if(this->params->cameraRotation<-360.0)
-			this->params->cameraRotation=0.0f;*/
-
-	}
-	else if(c=='e')
-	{
-		this->params->cameraRotation+=2.0f;
+		//kamera pos debug
+		std::cout<<"cam x "<<this->params->observer.x<<", y "<<this->params->observer.y<<", z "<<this->params->observer.z<<std::endl;
 	}
 }
 
