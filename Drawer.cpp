@@ -28,7 +28,7 @@ void Drawer::CreateObjectsToDraw()
 	this->objectsToDraw["glass"]=object2;
 
 	auto object3 = new BeerBottle();
-	this->objectsToDraw["beer"] = object3;
+	this->objectsToDraw["beerBottle"] = object3;
 }
 
 void Drawer::Display()
@@ -66,7 +66,7 @@ void Drawer::Display()
 		glDisable(GL_LIGHT3);
 	this->objectsToDraw["room"]->Draw();
 	this->objectsToDraw["glass"]->Draw();
-	this->objectsToDraw["beer"]->Draw();
+	this->objectsToDraw["beerBottle"]->Draw();
 
 	//Przerzucenie tylnego bufora na przedni
 	glutSwapBuffers();
