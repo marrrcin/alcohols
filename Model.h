@@ -1,5 +1,5 @@
 #pragma once
-
+#include "stdafx.h"
 typedef struct _Material
 {
 	float ambient[3];
@@ -42,6 +42,28 @@ public:
 	virtual void LoadModelFromObjFile(std::string fileName);
 	virtual void LoadMaterialFromMtlFile(std::string fileName);
 	virtual void SetMatrixes(glm::mat4 *viewMatrix, glm::mat4 *perspectiveMatrix);
+	virtual void ExportLoadedMatrixesToFile(std::string fileName);
+	virtual void QuickLoadFromFiles(std::string baseFileName);
+	
+	static void LoadVectorFromFile(std::string fileName, std::vector<glm::vec3> *vector)
+	{
+		std::fstream file;
+		int size, i;
+		float x, y, z;
+		file.open(fileName.c_str(), std::fstream::in);
+		file >> size;
+		for (i = 0; i < size; i++)
+		{
+			file >> x >> y >> z;
+			glm::vec3 vec3;
+			vec3.x = x;
+			vec3.y = y;
+			vec3.z = z;
+			(*vector).push_back(vec3);
+		}
+		file.close();
+	}
+
 
 	glm::mat4 *viewMatrix;
 	glm::mat4 *perspectiveMatrix;

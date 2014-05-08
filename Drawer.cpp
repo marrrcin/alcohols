@@ -3,6 +3,7 @@
 #include "Example1.h"
 #include "RoomModel.h"
 #include "Glass.h"
+#include "BeerBottle.h"
 
 Drawer::Drawer()
 {
@@ -25,6 +26,9 @@ void Drawer::CreateObjectsToDraw()
 
 	auto object2 = new Glass();
 	this->objectsToDraw["glass"]=object2;
+
+	auto object3 = new BeerBottle();
+	this->objectsToDraw["beer"] = object3;
 }
 
 void Drawer::Display()
@@ -62,6 +66,7 @@ void Drawer::Display()
 		glDisable(GL_LIGHT3);
 	this->objectsToDraw["room"]->Draw();
 	this->objectsToDraw["glass"]->Draw();
+	this->objectsToDraw["beer"]->Draw();
 
 	//Przerzucenie tylnego bufora na przedni
 	glutSwapBuffers();

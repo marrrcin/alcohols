@@ -1,47 +1,51 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="32" fromTop="1" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:tga.cpp" caret="495" fromTop="9" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.h" caret="531" fromTop="13" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="313" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.cpp" caret="534" fromTop="24" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="410" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1248" fromTop="53" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="239" fromTop="2" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.h" caret="32" fromTop="1" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="325" fromTop="14" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.h" caret="196" fromTop="7" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1360" fromTop="23" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.h" caret="130" fromTop="5" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.cpp" caret="0" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.h" caret="163" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:RoomModel.cpp" caret="1223" fromTop="14" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.h" caret="0" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.cpp" caret="610" fromTop="10" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="2142" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="523" fromTop="21" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="1603" fromTop="11" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="119" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="1432" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3829" fromTop="11" />
   </RecentFiles>
   <RecentEdits>
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="2741" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="410" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="948" fromTop="28" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="2741" fromTop="23" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="138" fromTop="6" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="499" fromTop="25" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="499" fromTop="16" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1513" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1525" fromTop="29" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1408" fromTop="29" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="930" fromTop="22" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="501" fromTop="10" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="899" fromTop="19" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="781" fromTop="11" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="581" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="703" fromTop="23" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1351" fromTop="11" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1617" fromTop="19" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="502" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1825" fromTop="12" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="287" fromTop="6" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1248" fromTop="2" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.cpp" caret="534" fromTop="24" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="413" fromTop="8" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="493" fromTop="15" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="272" fromTop="10" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="1264" fromTop="16" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3098" fromTop="7" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3590" fromTop="18" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3258" fromTop="15" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="4111" fromTop="22" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="4111" fromTop="32" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="4111" fromTop="20" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="4111" fromTop="27" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.h" caret="163" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="635" fromTop="20" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="132" fromTop="5" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1989" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="500" fromTop="8" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="1603" fromTop="23" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1822" fromTop="24" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1822" fromTop="15" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1822" fromTop="21" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="23" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="172" fromTop="15" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="1845" fromTop="26" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="167" fromTop="14" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="92" fromTop="5" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="58" fromTop="2" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3766" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="1485" fromTop="32" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3766" fromTop="8" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="1164" fromTop="8" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="1432" fromTop="22" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="4094" fromTop="23" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="523" fromTop="21" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3829" fromTop="11" />
   </RecentEdits>
 </RecentFiles>

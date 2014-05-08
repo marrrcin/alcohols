@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Model.h"
-
+#include <thread>
 
 Model::Model()
 {
@@ -36,7 +36,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 		firstChar = buffer.substr(0, 2);
 		stringStream.clear();
 		stringStream.str(buffer.substr(2));
-		if (firstChar == "v " || firstChar =="vn")
+		if (firstChar == "v " || firstChar == "vn")
 		{
 			glm::vec3 vertex;
 			stringStream >> vertex.x;
@@ -72,17 +72,19 @@ void Model::LoadModelFromObjFile(std::string fileName)
 					--face[q];
 				}
 
+
 				this->vertices.push_back(verticesBuffer[face[0]]);
 				this->normals.push_back(normalsBuffer[face[2]]);
 
 				if (hasTextures)
 					this->textures.push_back(texturesBuffer[face[1]]);
+
 			}
-			
+
 		}
 
 
-	} while (!file.eof());
+	} while (!file.eof()); 
 
 }
 
@@ -90,6 +92,10 @@ void Model::LoadModelFromObjFile(std::string fileName)
 void Model::PrepareFaceString(std::string &line)
 {
 	auto find = line.find("//");
+	if (find == std::string::npos)
+	{
+		int i = 0;
+	}
 	while (find != std::string::npos)
 	{
 		line.insert(find + 1, "0");
@@ -123,4 +129,46 @@ void Model::SetMatrixes(glm::mat4 *viewMatrix, glm::mat4 *perspectiveMatrix)
 void Model::LoadMaterialFromMtlFile(std::string fileName)
 {
 
+}
+
+void Model::ExportLoadedMatrixesToFile(std::string fileName)
+{
+	std::fstream file;
+	std::string fileName2;
+	int i;
+	fileName2 = fileName;
+	fileName2.append("Vertices.txt");
+	
+	file.open(fileName2.c_str(), std::fstream::out);
+	file << this->vertices.size() << std::endl;
+	for (i = 0; i < this->vertices.size(); i++)
+	{
+		file << this->vertices[i].x << " " << this->vertices[i].y << " " << this->vertices[i].z << std::endl;
+	}
+	file.close();
+
+	fileName2 = fileName;
+	fileName2.append("Normals.txt");
+	file.open(fileName2.c_str(), std::fstream::out);
+	file << this->normals.size() << std::endl;
+	for (i = 0; i < this->normals.size(); i++)
+	{
+		file << this->normals[i].x << " " << this->normals[i].y << " " << this->normals[i].z << std::endl;
+	}
+	file.close();
+
+}
+
+void Model::QuickLoadFromFiles(std::string baseFileName)
+{
+	std::string fileName = baseFileName;
+	fileName.append("Vertices.txt");
+	std::thread t1(Model::LoadVectorFromFile, fileName, &this->vertices);
+
+	fileName = baseFileName;
+	fileName.append("Normals.txt");
+	std::thread t2(Model::LoadVectorFromFile, fileName, &this->normals);
+
+	t1.join();
+	t2.join();
 }
