@@ -4,6 +4,8 @@
 #include "RoomModel.h"
 #include "Glass.h"
 #include "BeerBottle.h"
+#include "Closet.h"
+#include "Table.h"
 
 Drawer::Drawer()
 {
@@ -29,13 +31,20 @@ void Drawer::CreateObjectsToDraw()
 
 	auto object3 = new BeerBottle();
 	this->objectsToDraw["beerBottle"] = object3;
+
+	auto object4 = new Closet();
+	this->objectsToDraw["closet1"] = object4;
+
+	auto object5 = new Table();
+	this->objectsToDraw["table"] = object5;
+
 }
 
 void Drawer::Display()
 {
 
 	//Wyczyszczenie okna
-	glClearColor(0,0,0, 1);
+	glClearColor(172.0/255,213.0/255,1, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//Obliczenie macierzy rzutowania
@@ -67,6 +76,8 @@ void Drawer::Display()
 	this->objectsToDraw["room"]->Draw();
 	this->objectsToDraw["glass"]->Draw();
 	this->objectsToDraw["beerBottle"]->Draw();
+	this->objectsToDraw["closet1"]->Draw();
+	this->objectsToDraw["table"]->Draw();
 
 	//Przerzucenie tylnego bufora na przedni
 	glutSwapBuffers();

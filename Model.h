@@ -1,5 +1,8 @@
 #pragma once
 #include "stdafx.h"
+//JAK TO U¯YC? Patrz Example1.h
+
+//te structy poni¿ej to "na potem" do materia³ów i oœwietlenia
 typedef struct _Material
 {
 	float ambient[3];
@@ -39,6 +42,7 @@ public:
 	~Model();
 	virtual void Draw() = 0;
 	virtual void NextFrame() = 0;
+	virtual void LoadDefautlPerspectiveMatrix();
 	virtual void LoadModelFromObjFile(std::string fileName);
 	virtual void LoadMaterialFromMtlFile(std::string fileName);
 	virtual void SetMatrixes(glm::mat4 *viewMatrix, glm::mat4 *perspectiveMatrix);

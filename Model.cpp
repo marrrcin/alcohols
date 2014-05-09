@@ -2,6 +2,8 @@
 #include "Model.h"
 #include <thread>
 
+//JAK TO U¯YC? Patrz Example1.h
+
 Model::Model()
 {
 
@@ -171,4 +173,12 @@ void Model::QuickLoadFromFiles(std::string baseFileName)
 
 	t1.join();
 	t2.join();
+}
+
+void Model::LoadDefautlPerspectiveMatrix()
+{
+	glm::mat4 *P = this->perspectiveMatrix;
+	glMatrixMode(GL_PROJECTION);
+	glLoadMatrixf(glm::value_ptr(*P));
+	glMatrixMode(GL_MODELVIEW);
 }

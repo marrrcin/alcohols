@@ -54,6 +54,12 @@
     <ClCompile Include="BeerBottle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Closet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cube.h">
@@ -96,6 +102,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BeerBottle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Closet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

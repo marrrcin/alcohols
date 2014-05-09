@@ -101,6 +101,7 @@
   <ItemGroup>
     <ClCompile Include="alcohols.cpp" />
     <ClCompile Include="BeerBottle.cpp" />
+    <ClCompile Include="Closet.cpp" />
     <ClCompile Include="detailed_cube.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
@@ -111,10 +112,12 @@
     <ClCompile Include="OpenGLInitializer.cpp" />
     <ClCompile Include="RoomModel.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Table.cpp" />
     <ClCompile Include="tga.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BeerBottle.h" />
+    <ClInclude Include="Closet.h" />
     <ClInclude Include="cube.h" />
     <ClInclude Include="detailed_cube.h" />
     <ClInclude Include="Drawer.h" />
@@ -127,6 +130,7 @@
     <ClInclude Include="OpenGLInitializer.h" />
     <ClInclude Include="RoomModel.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Table.h" />
     <ClInclude Include="tga.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

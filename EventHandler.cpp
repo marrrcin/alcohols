@@ -57,7 +57,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	{
 		//kamera pos debug
 		std::cout<<"cam x "<<this->params->observer.x<<", y "<<this->params->observer.y<<", z "<<this->params->observer.z<<std::endl;
-		this->params->light3on=!this->params->light3on;
+		//this->params->light3on=!this->params->light3on;
 		std::cout<<this->params->light3on<<std::endl;
 	}
 }

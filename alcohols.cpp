@@ -20,14 +20,19 @@ int _tmain(int argc, char* argv[])
 	Drawer *drawer = new Drawer();
 	openGL.SetDrawer(drawer);
 
+	/*
+		w EventParameters s¹ wszystkie parametry, typu pozycja kamery;
+		z t¹ klas¹ ³¹czy siê eventHandler, który obs³uguje klawiaturê i mysz,
+		a co za tym idzie - modyfikuje parametry w eventParameters.
+
+		eventParameters jest przekazywany do "drawera", który podczas rysowania
+		odczytuje odpowiednie pola i ot i ca³a historyja.
+	*/
 	EventHandler *eventHandler = new EventHandler();
 	EventParameters *eventParameters = new EventParameters();
 	eventHandler->params=eventParameters;
 	drawer->params=eventParameters;
 	openGL.SetEventHandler(eventHandler);
-
-
-
 
 
 	openGL.StartMainLoop();

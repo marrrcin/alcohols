@@ -1,7 +1,11 @@
 #include "stdafx.h"
 #include "Glass.h"
 
-
+/* TODO
+trzeba wy³¹czyæ przes³anianie obiektów,
+albo poradziæ sobie lepiej z tym szk³em w oknach
+(9 maja 2014) MZ
+*/
 Glass::Glass()
 {
 	this->LoadModelFromObjFile("glass.obj");
