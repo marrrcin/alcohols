@@ -8,7 +8,7 @@
 	zgodnie z konwencj¹ któr¹ przedstawi³ VANdrzejewski na labkach;
 	
 	dodatkowo:
-	LoadDefautlPerspectiveMatrix(); -> przed rysowaniem w Draw() wypada to odpaliæ ¿eby powi¹zaæ obiekt z kamer¹
+	LoadDefaultPerspectiveMatrix(); -> przed rysowaniem w Draw() wypada to odpaliæ ¿eby powi¹zaæ obiekt z kamer¹
 
 	LoadModelFromObjFile(std::string fileName); -> wczytuje model z pliku .obj, ale uwaga!
 	implementacja tego pozostawia wiele do ¿yczenia, szczególnie jeœli weŸmiesz pod uwagê nieustanne operacje na stringach

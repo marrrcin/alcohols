@@ -104,7 +104,7 @@ void Model::PrepareFaceString(std::string &line)
 		find = line.find("//");
 	}
 
-	for (int q = 0; q < line.length(); q++)
+	for (unsigned q = 0; q < line.length(); q++)
 	{
 		if (line[q] == ' ')
 			line[q] = '/';
@@ -137,7 +137,7 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 {
 	std::fstream file;
 	std::string fileName2;
-	int i;
+	unsigned i;
 	fileName2 = fileName;
 	fileName2.append("Vertices.txt");
 	
@@ -175,7 +175,7 @@ void Model::QuickLoadFromFiles(std::string baseFileName)
 	t2.join();
 }
 
-void Model::LoadDefautlPerspectiveMatrix()
+void Model::LoadDefaultPerspectiveMatrix()
 {
 	glm::mat4 *P = this->perspectiveMatrix;
 	glMatrixMode(GL_PROJECTION);

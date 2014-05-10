@@ -6,6 +6,9 @@
 #include "BeerBottle.h"
 #include "Closet.h"
 #include "Table.h"
+#include "Barrel.h"
+#include "Mug.h"
+#include "ModelMover.h"
 
 Drawer::Drawer()
 {
@@ -15,6 +18,7 @@ Drawer::Drawer()
 
 Drawer::~Drawer()
 {
+	delete this->objectsToDraw["beerBottle"]->modelMover;
 	for (auto it = this->objectsToDraw.begin(); it != this->objectsToDraw.end(); ++it)
 	{
 		delete (*it).second;
@@ -30,13 +34,23 @@ void Drawer::CreateObjectsToDraw()
 	this->objectsToDraw["glass"]=object2;
 
 	auto object3 = new BeerBottle();
+	auto mover = new ModelMover();
+	object3->modelMover = mover;
+	this->params->modelMover = mover;
 	this->objectsToDraw["beerBottle"] = object3;
+
 
 	auto object4 = new Closet();
 	this->objectsToDraw["closet1"] = object4;
 
 	auto object5 = new Table();
 	this->objectsToDraw["table"] = object5;
+
+	auto object6 = new Barrel();
+	this->objectsToDraw["barrel"] = object6;
+
+	auto object7 = new Mug();
+	this->objectsToDraw["mug"] = object7;
 
 }
 
@@ -74,10 +88,22 @@ void Drawer::Display()
 	else
 		glDisable(GL_LIGHT3);
 	this->objectsToDraw["room"]->Draw();
-	this->objectsToDraw["glass"]->Draw();
-	this->objectsToDraw["beerBottle"]->Draw();
+	
+
+	for (auto i = this->objectsToDraw.begin(); i != this->objectsToDraw.end(); i++)
+	{
+		if (i->first != "room" && i->first != "glass")
+		{
+			i->second->Draw();
+		}
+	}
+	/*this->objectsToDraw["beerBottle"]->Draw();
 	this->objectsToDraw["closet1"]->Draw();
 	this->objectsToDraw["table"]->Draw();
+	this->objectsToDraw["barrel"]->Draw();
+	this->objectsToDraw["mug"]->Draw();
+*/
+	this->objectsToDraw["glass"]->Draw();
 
 	//Przerzucenie tylnego bufora na przedni
 	glutSwapBuffers();

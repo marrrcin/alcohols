@@ -1,5 +1,7 @@
 #pragma once
 #include "stdafx.h"
+#include "ModelMover.h"
+
 //JAK TO U¯YC? Patrz Example1.h
 
 //te structy poni¿ej to "na potem" do materia³ów i oœwietlenia
@@ -42,7 +44,7 @@ public:
 	~Model();
 	virtual void Draw() = 0;
 	virtual void NextFrame() = 0;
-	virtual void LoadDefautlPerspectiveMatrix();
+	virtual void LoadDefaultPerspectiveMatrix();
 	virtual void LoadModelFromObjFile(std::string fileName);
 	virtual void LoadMaterialFromMtlFile(std::string fileName);
 	virtual void SetMatrixes(glm::mat4 *viewMatrix, glm::mat4 *perspectiveMatrix);
@@ -71,5 +73,6 @@ public:
 
 	glm::mat4 *viewMatrix;
 	glm::mat4 *perspectiveMatrix;
+	ModelMover *modelMover;
 };
 

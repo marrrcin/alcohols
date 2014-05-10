@@ -100,6 +100,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="alcohols.cpp" />
+    <ClCompile Include="Barrel.cpp" />
     <ClCompile Include="BeerBottle.cpp" />
     <ClCompile Include="Closet.cpp" />
     <ClCompile Include="detailed_cube.cpp" />
@@ -109,6 +110,8 @@
     <ClCompile Include="Example1.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelMover.cpp" />
+    <ClCompile Include="Mug.cpp" />
     <ClCompile Include="OpenGLInitializer.cpp" />
     <ClCompile Include="RoomModel.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -116,6 +119,7 @@
     <ClCompile Include="tga.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Barrel.h" />
     <ClInclude Include="BeerBottle.h" />
     <ClInclude Include="Closet.h" />
     <ClInclude Include="cube.h" />
@@ -127,6 +131,8 @@
     <ClInclude Include="Example1.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelMover.h" />
+    <ClInclude Include="Mug.h" />
     <ClInclude Include="OpenGLInitializer.h" />
     <ClInclude Include="RoomModel.h" />
     <ClInclude Include="stdafx.h" />

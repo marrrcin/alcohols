@@ -1,5 +1,7 @@
 #pragma once
 #include "stdafx.h"
+#include "ModelMover.h"
+
 class EventParameters
 {
 
@@ -15,5 +17,11 @@ public:
 	float cameraRotation;
 
 	bool light3on;
+	bool crouch;
+
+	ModelMover *modelMover;
+	Action currentAction;
+	ActionAxis actionAxis;
+	float ax, ay, az;
 };
 

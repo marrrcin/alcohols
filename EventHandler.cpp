@@ -53,13 +53,118 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 		this->params->observer+=this->temp2*this->cameraSpeed;
 		this->params->center+=this->temp2*this->cameraSpeed;
 	}
+
+	//obs³uga przesuwacza obiektów
+	else if (c == 'r')
+	{
+		this->params->currentAction = rotate;
+		std::cout << "current action : rotate" << std::endl;
+	}
+	else if (c == 't')
+	{
+		this->params->currentAction = translate;
+		std::cout << "current action : translate" << std::endl;
+	}
+	else if (c == 'u')
+	{
+		this->params->currentAction = scale;
+		std::cout << "current action : scale" << std::endl;
+	}
+	else if (c == 'x')
+	{
+		this->params->actionAxis = ActionAxis::x;
+		if (this->params->currentAction == Action::rotate)
+		{
+			this->params->modelMover->RotateUpdate(ActionAxis::x);
+		}
+			
+		std::cout << "current axis : x" << std::endl;
+	}
+	else if (c == 'y')
+	{
+		this->params->actionAxis = ActionAxis::y;
+		if (this->params->currentAction == Action::rotate)
+		{
+			this->params->modelMover->RotateUpdate(ActionAxis::y);
+		}
+		std::cout << "current axis : y" << std::endl;
+	}
+	else if (c == 'z')
+	{
+		this->params->actionAxis = ActionAxis::z;
+		if (this->params->currentAction == Action::rotate)
+		{
+			this->params->modelMover->RotateUpdate(ActionAxis::z);
+		}
+			
+		std::cout << "current axis : z" << std::endl;
+	}
+	else if (c == 'm')
+	{
+		this->params->modelMover->isEnabled = !this->params->modelMover->isEnabled;
+	}
+	else if (c == 'i') //up
+	{
+		this->UpdateMover(0.05);
+	}
+	else if (c == 'k') //down
+	{
+		this->UpdateMover(-0.05);
+	}
+	else if (c == 'p')
+	{
+		this->params->modelMover->Print();
+	}
+
+	//koniec obs³ugi przesuwacza
+	
 	else if(c=='c')
 	{
 		//kamera pos debug
 		std::cout<<"cam x "<<this->params->observer.x<<", y "<<this->params->observer.y<<", z "<<this->params->observer.z<<std::endl;
-		//this->params->light3on=!this->params->light3on;
-		std::cout<<this->params->light3on<<std::endl;
+		
+		//kucanie
+		this->params->crouch = !this->params->crouch;
+		if (this->params->crouch)
+		{
+			this->params->observer.y = 3.0f;
+		}
+		else
+		{
+			this->params->observer.y = 5.0f;
+		}
 	}
+}
+
+void EventHandler::UpdateMover(float value)
+{
+	switch (this->params->actionAxis)
+	{
+		case ActionAxis::x:
+		{
+			this->params->ax = value;
+			break;
+		}
+
+		case ActionAxis::y:
+		{
+			this->params->ay = value;
+			break;
+		}
+
+		case ActionAxis::z:
+		{
+			this->params->az = value;
+			break;
+		}
+
+		default:
+			break;
+	}
+	this->params->modelMover->Update(this->params->currentAction,this->params->actionAxis, this->params->ax, this->params->ay, this->params->az);
+	this->params->ax = 0;
+	this->params->ay = 0;
+	this->params->az = 0;
 }
 
 void EventHandler::KeyUp(unsigned char c, int x, int y)

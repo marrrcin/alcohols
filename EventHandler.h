@@ -18,6 +18,8 @@ private:
 	float toRad;
 	int difference;
 
+	void UpdateMover(float value);
+
 public:
 	EventHandler();
 	~EventHandler();

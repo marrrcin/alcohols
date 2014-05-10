@@ -10,6 +10,14 @@ EventParameters::EventParameters(void)
 	this->nose=glm::vec3(0.0f, 1.0f, 0.0f);
 
 	this->light3on=false;
+	this->crouch = false;
+
+	this->currentAction = translate;
+	
+	this->actionAxis = x;
+	this->ax = 0;
+	this->ay = 0;
+	this->az = 0;
 }
 
 

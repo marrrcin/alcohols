@@ -5,6 +5,9 @@
 trzeba wy³¹czyæ przes³anianie obiektów,
 albo poradziæ sobie lepiej z tym szk³em w oknach
 (9 maja 2014) MZ
+
+Fixed: wystarczy³o zmieniæ kolejnoœæ rysowania.
+(10 maja 2014) MZ
 */
 Glass::Glass()
 {
