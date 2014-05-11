@@ -1,0 +1,100 @@
+# Blender MTL File: 'Krug.blend'
+# Material Count: 9
+
+newmtl Griff
+Ns 233.333333
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.300000 0.300000 0.300000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\Texturen\wurzelholz01.jpg
+map_Bump F:\\Texturen\\wurzelholz01.jpg
+
+newmtl Holz
+Ns 233.333333
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.300000 0.300000 0.300000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\Texturen\DirtMaps\dirt04.jpg
+map_Bump F:\\Texturen\\wurzelholz01.jpg
+
+newmtl Holz_NONE
+Ns 233.333333
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.300000 0.300000 0.300000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump F:\\Texturen\\wurzelholz01.jpg
+map_Kd F:\\Texturen\\wurzelholz01.jpg
+
+newmtl Holz_WoodPlanksBare0010_L.jpg
+Ns 233.333333
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.300000 0.300000 0.300000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\Texturen\Holzboeden\WoodPlanksBare0010_L.jpg
+map_Bump F:\\Texturen\\wurzelholz01.jpg
+
+newmtl Holz_wurzelholz01.jpg
+Ns 233.333333
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.300000 0.300000 0.300000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\Texturen\wurzelholz01.jpg
+map_Bump F:\\Texturen\\wurzelholz01.jpg
+
+newmtl Rand
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd F:\Texturen\Holzboeden\WoodPlanksBare0010_L.jpg
+
+newmtl Ring
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.505874 0.245944 0.098833
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\Texturen\Metalle\BronzeCopper0039_M.jpg
+map_Bump F:\\Texturen\\Metalle\\BronzeCopper0039_M.jpg
+
+newmtl Ring_NONE
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.505874 0.245944 0.098833
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump F:\\Texturen\\Metalle\\BronzeCopper0039_M.jpg
+map_Kd F:\\Texturen\\Metalle\\BronzeCopper0039_M.jpg
+
+newmtl innen
+Ns 233.333333
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.150000 0.150000 0.150000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump F:\\Texturen\\wurzelholz01.jpg
+map_Kd F:\\Texturen\\wurzelholz01.jpg

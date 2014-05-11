@@ -2,58 +2,64 @@
   <RecentFiles>
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:tga.cpp" caret="495" fromTop="9" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.h" caret="196" fromTop="7" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.h" caret="130" fromTop="5" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:stdafx.cpp" caret="0" fromTop="0" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.h" caret="0" fromTop="0" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventParameters.h" caret="0" fromTop="0" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="1148" fromTop="21" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:tga.h" caret="0" fromTop="0" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.h" caret="148" fromTop="9" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Glass.cpp" caret="225" fromTop="10" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.cpp" caret="505" fromTop="17" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.cpp" caret="2142" fromTop="59" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="62" fromTop="4" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="855" fromTop="44" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="1943" fromTop="19" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.cpp" caret="1006" fromTop="22" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventParameters.cpp" caret="291" fromTop="11" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="928" fromTop="11" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="1598" fromTop="11" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="242" fromTop="14" />
     <File id="B4420002-728D-4E95-9E32-935D924D6014/f:RoomModel.cpp" caret="1354" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.h" caret="153" fromTop="10" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.cpp" caret="246" fromTop="7" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Glass.cpp" caret="229" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.h" caret="148" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.cpp" caret="327" fromTop="18" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="1903" fromTop="18" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:cube.h" caret="0" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.cpp" caret="996" fromTop="26" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.h" caret="309" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventParameters.cpp" caret="428" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="2216" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="864" fromTop="16" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:OpenGLInitializer.cpp" caret="1006" fromTop="10" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="694" fromTop="8" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="904" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Mug.h" caret="142" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventParameters.h" caret="393" fromTop="24" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="58" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Barrel.cpp" caret="108" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.h" caret="91" fromTop="5" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Mug.cpp" caret="93" fromTop="4" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="3203" fromTop="0" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Barrel.h" caret="151" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="567" fromTop="16" />
   </RecentFiles>
   <RecentEdits>
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="4213" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="899" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.cpp" caret="83" fromTop="5" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.cpp" caret="562" fromTop="18" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="866" fromTop="15" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="1598" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.cpp" caret="647" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="1002" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="772" fromTop="13" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventParameters.cpp" caret="291" fromTop="11" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Glass.cpp" caret="159" fromTop="6" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Glass.cpp" caret="403" fromTop="10" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.h" caret="148" fromTop="9" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.cpp" caret="93" fromTop="4" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="132" fromTop="4" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="1763" fromTop="15" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="1763" fromTop="15" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.cpp" caret="632" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="1689" fromTop="22" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Example1.h" caret="1148" fromTop="12" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.cpp" caret="594" fromTop="32" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.cpp" caret="602" fromTop="23" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.cpp" caret="558" fromTop="17" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.cpp" caret="341" fromTop="15" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="173" fromTop="7" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="770" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="1943" fromTop="22" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Closet.cpp" caret="505" fromTop="20" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.cpp" caret="78" fromTop="5" />
-    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Table.cpp" caret="427" fromTop="13" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="755" fromTop="11" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="1732" fromTop="15" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Model.h" caret="58" fromTop="2" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="33" fromTop="1" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="464" fromTop="13" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="347" fromTop="10" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="237" fromTop="10" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:Drawer.cpp" caret="786" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="1009" fromTop="21" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="374" fromTop="7" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="1012" fromTop="25" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:alcohols.cpp" caret="904" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:BeerBottle.cpp" caret="487" fromTop="17" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="3296" fromTop="22" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventParameters.cpp" caret="428" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="847" fromTop="15" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="1691" fromTop="32" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="1354" fromTop="10" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="1575" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="1708" fromTop="14" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="1831" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.cpp" caret="996" fromTop="26" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="1429" fromTop="11" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="1633" fromTop="26" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="1529" fromTop="20" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="3643" fromTop="28" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:ModelMover.h" caret="984" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="1941" fromTop="9" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="2192" fromTop="19" />
+    <File id="B4420002-728D-4E95-9E32-935D924D6014/f:EventHandler.cpp" caret="2438" fromTop="28" />
   </RecentEdits>
 </RecentFiles>
