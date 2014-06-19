@@ -30,14 +30,8 @@ int _tmain(int argc, char* argv[])
 	eventHandler->params = eventParameters;
 	openGL.SetEventHandler(eventHandler);
 
-	Drawer *drawer = new Drawer();
-	drawer->params = eventParameters;
+	Drawer *drawer = new Drawer(eventParameters);
 	openGL.SetDrawer(drawer);
-
-	
-	
-	
-
 
 	openGL.StartMainLoop();
 

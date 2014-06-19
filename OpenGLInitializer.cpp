@@ -33,10 +33,12 @@ bool OpenGLInitializer::Initialize(int screenWidth, int screenHeight,std::string
 void OpenGLInitializer::SetDrawer(Drawer *drawer)
 {
 	this->drawer = drawer;
-	this->drawer->CreateObjectsToDraw();
 	self = this;
 	glutDisplayFunc(OpenGLInitializer::DisplayFunction);
 	glutIdleFunc(OpenGLInitializer::IdleFunction);
+
+	//obsluga kolizji
+	CollisionDetector::LoadBoundLinesFromFile("roomBounds.txt");
 }
 
 void OpenGLInitializer::SetEventHandler(EventHandler *eventHandler)

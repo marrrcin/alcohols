@@ -23,7 +23,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -63,6 +63,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <AdditionalOptions>OPENGL32.LIB GLU32.LIB glut32.lib glew32.lib
@@ -76,6 +77,9 @@
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -102,18 +106,23 @@
     <ClCompile Include="alcohols.cpp" />
     <ClCompile Include="Barrel.cpp" />
     <ClCompile Include="BeerBottle.cpp" />
+    <ClCompile Include="BeerCan.cpp" />
     <ClCompile Include="Closet.cpp" />
+    <ClCompile Include="CollisionDetector.cpp" />
     <ClCompile Include="detailed_cube.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="EventParameters.cpp" />
     <ClCompile Include="Example1.cpp" />
     <ClCompile Include="Glass.cpp" />
+    <ClCompile Include="Lamp.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelFactory.cpp" />
     <ClCompile Include="ModelMover.cpp" />
     <ClCompile Include="Mug.cpp" />
     <ClCompile Include="OpenGLInitializer.cpp" />
     <ClCompile Include="RoomModel.cpp" />
+    <ClCompile Include="Shelves.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="tga.cpp" />
@@ -121,7 +130,9 @@
   <ItemGroup>
     <ClInclude Include="Barrel.h" />
     <ClInclude Include="BeerBottle.h" />
+    <ClInclude Include="BeerCan.h" />
     <ClInclude Include="Closet.h" />
+    <ClInclude Include="CollisionDetector.h" />
     <ClInclude Include="cube.h" />
     <ClInclude Include="detailed_cube.h" />
     <ClInclude Include="Drawer.h" />
@@ -130,14 +141,20 @@
     <ClInclude Include="EventParameters.h" />
     <ClInclude Include="Example1.h" />
     <ClInclude Include="Glass.h" />
+    <ClInclude Include="Lamp.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelFactory.h" />
     <ClInclude Include="ModelMover.h" />
     <ClInclude Include="Mug.h" />
     <ClInclude Include="OpenGLInitializer.h" />
     <ClInclude Include="RoomModel.h" />
+    <ClInclude Include="Shelves.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="tga.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,6 +19,7 @@ private:
 	int difference;
 
 	void UpdateMover(float value);
+	bool CanMoveTo(glm::vec3 newPosition);
 
 public:
 	EventHandler();

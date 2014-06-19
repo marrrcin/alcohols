@@ -27,9 +27,9 @@
 	próbie u¿ycia ich
 
 	a! ¿eby obiekt siê rzeczywiœcie narysowa³:
-	1. musisz go utworzyæ w metodzie CreateObjectsToDraw() w Drawer.cpp (dodajesz go do s³ownika - sprawdŸ jak to tam wygl¹da)
+	1. musisz go utworzyæ w metodzie CreateObjectsToDraw() w ModelFactory.cpp (dodajesz go do s³ownika - sprawdŸ jak to tam wygl¹da)
 	jeœli masz lepszy pomys³ na ogarniêcie wszystkich modeli, czuæ wolnym do zmiana
-	2. musisz wywo³aæ na tym obiekcie metodê Draw() w Display() w Drawer.cpp. NextFrame() wywo³uje Drawer samodzielnie.
+	2. musisz wywo³aæ na tym obiekcie metodê Draw() w Display() w Drawer.cpp (fix: jest ju¿ pêtla). NextFrame() wywo³uje Drawer samodzielnie.
 	3. powinno dzia³aæ.
 
 	MZ

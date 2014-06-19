@@ -5,7 +5,16 @@
 	aby w³¹czyæ przesuwanie na ¿ywo nale¿y:
 	1. do modelu (czegoœ co dziedziczy po Model.h) dodaæ instancjê klasy ModelMover
 	2. do eventParams dodaæ instancjê ModelMover (t¹ z punktu 1)
-	\->powy¿sze dzieje siê w Drawer.cpp CreateObjectsToDraw()
+	\->powy¿sze dzieje siê w Drawer.cpp AssignModelMover()
+
+	2.5. do modelu trzeba dodaæ kod
+	if (this->modelMover->isEnabled)
+	{
+		M = this->modelMover->Scale(M);
+		M = this->modelMover->Rotate(M);
+		M = this->modelMover->Translate(M);
+	}
+	ma on byæ umieszczony zaraz po utworzeniu macierzy M
 
 	3. jak odpalisz program, klikasz "m" na klawiaturze aby w³¹czyæ/wy³¹czyæ poruszanie
 	4. klikasz x, y lub z aby wybraæ oœ, któr¹ chcesz zmieniaæ

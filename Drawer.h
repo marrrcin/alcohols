@@ -1,20 +1,24 @@
 #pragma once
 #include "Model.h"
 #include "EventParameters.h"
+#include "CollisionDetector.h"
 class Drawer
 {
 protected:
 	virtual void PassMatrixesToAllObjects(glm::mat4 *viewMatrix, glm::mat4 *pMatrix);
 public:
-	Drawer();
+	Drawer(EventParameters *params);
 	~Drawer();
 
 	void Display();
 	void PrepareNextFrame();
 
 	void CreateObjectsToDraw();
+	void AssignModelMover();
 
 	std::map<std::string, Model*> objectsToDraw;
+	std::map<Model*,CollisionStatus*> collidableObjects;
+
 
 	EventParameters *params;
 };

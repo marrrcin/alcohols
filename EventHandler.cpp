@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "EventHandler.h"
+#include "CollisionDetector.h"
 #include <cmath>
 
 
@@ -21,37 +22,66 @@ EventHandler::~EventHandler()
 {
 }
 
+bool EventHandler::CanMoveTo(glm::vec3 newPosition)
+{
+	glm::vec2 point;
+	point.x=newPosition.x;
+	point.y=newPosition.z;
+	if(CollisionDetector::IsPointOutOfBounds(point))
+			return false;
+
+	return true;
+}
+
 void EventHandler::KeyDown(unsigned char c, int x, int y)
 {
 	glm::vec3 center = this->params->center;
 	glm::vec3 observer = this->params->observer;
 	glm::vec3 nose = this->params->nose;
 	
+	
 	if(c=='w')
 	{
 		this->temp = glm::normalize(glm::vec3(center.x,observer.y,center.z)-observer);
-		this->params->observer+=this->temp*this->cameraSpeed;
-		this->params->center+=this->temp*this->cameraSpeed;
+		observer = this->params->observer + this->temp*this->cameraSpeed;
+		if(CanMoveTo(observer))
+		{
+			this->params->observer+=this->temp*this->cameraSpeed;
+			this->params->center+=this->temp*this->cameraSpeed;
+		}
 	}
 	else if(c=='s')
 	{
 		this->temp = glm::normalize(glm::vec3(center.x,observer.y,center.z)-observer);
-		this->params->observer-=this->temp*this->cameraSpeed;
-		this->params->center-=this->temp*this->cameraSpeed;
+		observer = this->params->observer - this->temp*this->cameraSpeed;
+		if(CanMoveTo(observer))
+		{
+			this->params->observer-=this->temp*this->cameraSpeed;
+			this->params->center-=this->temp*this->cameraSpeed;
+		}
 	}
 	else if(c=='d')
 	{
 		this->temp = glm::normalize(center-observer);
 		this->temp2 = glm::cross(nose,this->temp);
-		this->params->observer-=this->temp2*this->cameraSpeed;
-		this->params->center-=this->temp2*this->cameraSpeed;
+
+		observer = this->params->observer - this->temp2*this->cameraSpeed;
+		if(CanMoveTo(observer))
+		{
+			this->params->observer-=this->temp2*this->cameraSpeed;
+			this->params->center-=this->temp2*this->cameraSpeed;
+		}
 	}
 	else if(c=='a')
 	{
 		this->temp = glm::normalize(center-observer);
 		this->temp2 = glm::cross(nose,this->temp);
-		this->params->observer+=this->temp2*this->cameraSpeed;
-		this->params->center+=this->temp2*this->cameraSpeed;
+		observer = this->params->observer + this->temp2*this->cameraSpeed;
+		if(CanMoveTo(observer))
+		{
+			this->params->observer+=this->temp2*this->cameraSpeed;
+			this->params->center+=this->temp2*this->cameraSpeed;
+		}
 	}
 
 	//obs³uga przesuwacza obiektów
@@ -122,7 +152,8 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	{
 		//kamera pos debug
 		std::cout<<"cam x "<<this->params->observer.x<<", y "<<this->params->observer.y<<", z "<<this->params->observer.z<<std::endl;
-		
+		std::cout<<"lookAt x"<<this->params->center.x<<" ,y "<<this->params->center.y<<",z "<<this->params->center.z<<std::endl;
+
 		//kucanie
 		this->params->crouch = !this->params->crouch;
 		if (this->params->crouch)

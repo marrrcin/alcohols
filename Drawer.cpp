@@ -1,56 +1,32 @@
 #include "stdafx.h"
 #include "Drawer.h"
-#include "Example1.h"
-#include "RoomModel.h"
-#include "Glass.h"
-#include "BeerBottle.h"
-#include "Closet.h"
-#include "Table.h"
-#include "Barrel.h"
-#include "Mug.h"
 #include "ModelMover.h"
+#include "ModelFactory.h"
 
-Drawer::Drawer()
+Drawer::Drawer(EventParameters *params)
 {
-
+	ModelFactory modelFactory;
+	modelFactory.CreateObjectsToDraw(&(this->objectsToDraw));
+	modelFactory.GetObjectsForCollisionsCheck(&(this->objectsToDraw),&(this->collidableObjects));
+	this->params=params;
+	this->AssignModelMover();
 }
 
 
 Drawer::~Drawer()
 {
-	delete this->objectsToDraw["beerBottle"]->modelMover;
+	delete this->objectsToDraw["beerCan"]->modelMover;
 	for (auto it = this->objectsToDraw.begin(); it != this->objectsToDraw.end(); ++it)
 	{
 		delete (*it).second;
 	}
 }
 
-void Drawer::CreateObjectsToDraw()
+void Drawer::AssignModelMover()
 {
-	auto object1 = new RoomModel();
-	this->objectsToDraw["room"] = object1;
-
-	auto object2 = new Glass();
-	this->objectsToDraw["glass"]=object2;
-
-	auto object3 = new BeerBottle();
-	auto mover = new ModelMover();
-	object3->modelMover = mover;
-	this->params->modelMover = mover;
-	this->objectsToDraw["beerBottle"] = object3;
-
-
-	auto object4 = new Closet();
-	this->objectsToDraw["closet1"] = object4;
-
-	auto object5 = new Table();
-	this->objectsToDraw["table"] = object5;
-
-	auto object6 = new Barrel();
-	this->objectsToDraw["barrel"] = object6;
-
-	auto object7 = new Mug();
-	this->objectsToDraw["mug"] = object7;
+		auto mover = new ModelMover();
+		this->objectsToDraw["beerCan"]->modelMover=mover;
+		this->params->modelMover = mover;
 
 }
 
@@ -103,7 +79,28 @@ void Drawer::Display()
 	this->objectsToDraw["barrel"]->Draw();
 	this->objectsToDraw["mug"]->Draw();
 */
+	auto M = glm::mat4(1.0f);
+	auto x = this->params->center.x;
+	auto y = this->params->center.y;
+	auto z = this->params->center.z;
+	M = glm::translate(M,glm::vec3(x,y,z));
+	glEnable(GL_COLOR_MATERIAL);
+	glColor3d(1,0,0);
+	glLoadMatrixf(glm::value_ptr(V*M));
+	glutSolidSphere(1.0f,10,10);
+	glDisable(GL_COLOR_MATERIAL);
 	this->objectsToDraw["glass"]->Draw();
+
+	//kolizje v1
+	for(auto i = this->collidableObjects.begin(); i!=this->collidableObjects.end(); i++)
+	{
+																											// kat kolizji, promien
+		CollisionDetector::CheckForCollisions(i->first->modelMatrix,this->params->observer,this->params->center,16,3,i->second);
+		if(*(i->second)==CollisionStatus::detected)
+			std::cout<<"Collision!"<<std::endl;
+		//else
+			//std::cout<<"No collision..."<<std::endl;
+	}
 
 	//Przerzucenie tylnego bufora na przedni
 	glutSwapBuffers();
@@ -113,7 +110,7 @@ void Drawer::Display()
 
 void Drawer::PrepareNextFrame()
 {
-	this->objectsToDraw["room"]->NextFrame();
+	this->objectsToDraw["lamp"]->NextFrame();
 	glutPostRedisplay();
 }
 

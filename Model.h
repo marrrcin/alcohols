@@ -73,6 +73,8 @@ public:
 
 	glm::mat4 *viewMatrix;
 	glm::mat4 *perspectiveMatrix;
+	glm::mat4 *modelMatrix;
+
 	ModelMover *modelMover;
 };
 
