@@ -83,6 +83,11 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 			this->params->center+=this->temp2*this->cameraSpeed;
 		}
 	}
+	//interakcja z obiektem
+	else if(c==' ')
+	{
+		this->params->collisionAction=true;
+	}
 
 	//obs³uga przesuwacza obiektów
 	else if (c == 'r')

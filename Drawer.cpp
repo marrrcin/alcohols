@@ -16,6 +16,12 @@ Drawer::Drawer(EventParameters *params)
 Drawer::~Drawer()
 {
 	delete this->objectsToDraw["beerCan"]->modelMover;
+
+	for(auto it = this->collidableObjects.begin();it!=this->collidableObjects.end();++it)
+	{
+		delete (*it).second;
+	}
+
 	for (auto it = this->objectsToDraw.begin(); it != this->objectsToDraw.end(); ++it)
 	{
 		delete (*it).second;
@@ -92,15 +98,7 @@ void Drawer::Display()
 	this->objectsToDraw["glass"]->Draw();
 
 	//kolizje v1
-	for(auto i = this->collidableObjects.begin(); i!=this->collidableObjects.end(); i++)
-	{
-																											// kat kolizji, promien
-		CollisionDetector::CheckForCollisions(i->first->modelMatrix,this->params->observer,this->params->center,16,3,i->second);
-		if(*(i->second)==CollisionStatus::detected)
-			std::cout<<"Collision!"<<std::endl;
-		//else
-			//std::cout<<"No collision..."<<std::endl;
-	}
+	this->HandleCollisions();
 
 	//Przerzucenie tylnego bufora na przedni
 	glutSwapBuffers();
@@ -108,9 +106,45 @@ void Drawer::Display()
 	
 }
 
+
+void Drawer::HandleCollisions()
+{
+	Model *modelWithCollision;
+	CollisionStatus *status;
+	bool collisionDetected = false;
+	for(auto i = this->collidableObjects.begin(); i!=this->collidableObjects.end(); i++)
+	{
+																											// kat kolizji, promien
+		CollisionDetector::CheckForCollisions(i->first->modelMatrix,this->params->observer,this->params->center,16,4,i->second);
+		if(*(i->second)==CollisionStatus::detected)
+		{
+			std::cout<<"Collision!"<<std::endl;
+			modelWithCollision = i->first;
+			status = i->second;
+			collisionDetected = true;
+			break;								//tylko jedna kolizja w danym momencie
+		}
+	}
+
+	if(collisionDetected && this->params->collisionAction==true)
+	{
+		this->params->collisionAction=false;
+		if(*(modelWithCollision->collisionStatus)!=CollisionStatus::handling)
+		{
+			*status=CollisionStatus::handling;
+			modelWithCollision->collisionStatus=status;
+		}
+			
+	}
+
+}
+
 void Drawer::PrepareNextFrame()
 {
-	this->objectsToDraw["lamp"]->NextFrame();
+	for (auto i = this->objectsToDraw.begin(); i != this->objectsToDraw.end(); i++)
+	{
+		i->second->NextFrame();
+	}
 	glutPostRedisplay();
 }
 

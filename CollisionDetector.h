@@ -143,7 +143,7 @@ public:
 			
 		}
 
-		return (intersections%2==0);//&&(intersectionsy%2==0);
+		return (intersections%2==0);
 
 	}
 
@@ -188,9 +188,15 @@ public:
 		
 
 		if(IsPointInTriangle(p1,p2,p3,centerOfModel))
-			*status=CollisionStatus::detected;
+		{
+			if(*status!=CollisionStatus::handling)
+				*status=CollisionStatus::detected;
+		}
 		else
+		{
 			*status=CollisionStatus::none;
+		}
+			
 
 	
 	};

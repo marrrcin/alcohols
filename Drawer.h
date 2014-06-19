@@ -15,6 +15,8 @@ public:
 
 	void CreateObjectsToDraw();
 	void AssignModelMover();
+	void HandleCollisions();
+
 
 	std::map<std::string, Model*> objectsToDraw;
 	std::map<Model*,CollisionStatus*> collidableObjects;

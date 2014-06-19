@@ -11,6 +11,7 @@ EventParameters::EventParameters(void)
 
 	this->light3on=false;
 	this->crouch = false;
+	this->collisionAction = false;
 
 	this->currentAction = translate;
 	

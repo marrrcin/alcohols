@@ -3,6 +3,11 @@
 class BeerBottle :
 	public Model
 {
+private:
+	float rotationAngle;
+	float rotationSpeed;
+	float lastTime;
+	float startTime;
 public:
 	BeerBottle();
 	~BeerBottle();

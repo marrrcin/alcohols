@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "ModelMover.h"
-
+#include "CollisionDetector.h"
 //JAK TO U¯YC? Patrz Example1.h
 
 //te structy poni¿ej to "na potem" do materia³ów i oœwietlenia
@@ -29,6 +29,9 @@ class Model
 {
 private:
 	void PrepareFaceString(std::string &line);
+
+
+
 protected:
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec3> normals;
@@ -37,6 +40,9 @@ protected:
 
 	Material material;
 	Lights lights;
+		
+	
+
 
 	virtual void RenderObject();
 public:
@@ -44,6 +50,8 @@ public:
 	~Model();
 	virtual void Draw() = 0;
 	virtual void NextFrame() = 0;
+
+
 	virtual void LoadDefaultPerspectiveMatrix();
 	virtual void LoadModelFromObjFile(std::string fileName);
 	virtual void LoadMaterialFromMtlFile(std::string fileName);
@@ -74,6 +82,10 @@ public:
 	glm::mat4 *viewMatrix;
 	glm::mat4 *perspectiveMatrix;
 	glm::mat4 *modelMatrix;
+
+	CollisionStatus *collisionStatus;
+	bool isHandling;
+
 
 	ModelMover *modelMover;
 };

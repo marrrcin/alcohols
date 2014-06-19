@@ -10,6 +10,11 @@ BeerBottle::BeerBottle()
 	*M = glm::translate(*M,glm::vec3(-7.75f,13.25f,-2.8f));
 
 	this->modelMatrix = M;
+	
+
+	this->lastTime=0;
+	this->rotationAngle=0;
+	this->rotationSpeed=140;
 }
 
 
@@ -24,7 +29,34 @@ void BeerBottle::Draw()
 
 	glm::mat4 *V = this->viewMatrix;
 	glMatrixMode(GL_MODELVIEW);
-	glLoadMatrixf(glm::value_ptr(*V**this->modelMatrix)); //SYNTAX SHIT,I'm in a hurry, sorry
+
+	if(*(this->collisionStatus)==CollisionStatus::handling)
+	{
+		if(!this->isHandling)
+		{
+			this->isHandling = true;
+			this->rotationAngle=0.0;
+			this->lastTime=glutGet(GLUT_ELAPSED_TIME);
+			this->startTime=glutGet(GLUT_ELAPSED_TIME);
+		}
+
+		glm::mat4 M = *(this->modelMatrix);
+		int actTime=glutGet(GLUT_ELAPSED_TIME);
+		int interval=actTime-lastTime;
+		lastTime=actTime;
+		this->rotationAngle+=this->rotationSpeed*interval/1000.0;
+		if (actTime-this->startTime>3000)
+		{
+			*(this->collisionStatus)=CollisionStatus::handled;
+			this->isHandling=false;
+		}	
+
+		M = glm::rotate(M,this->rotationAngle,glm::vec3(1,0,0));
+		glLoadMatrixf(glm::value_ptr(*V*M));
+	}
+	else
+		glLoadMatrixf(glm::value_ptr(*V**this->modelMatrix)); //SYNTAX SHIT,I'm in a hurry, sorry
+	
 	glEnable(GL_COLOR_MATERIAL);
 	glColor3f(1.0f, 1.0f, 1.0f);
 	this->RenderObject();

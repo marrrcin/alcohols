@@ -6,7 +6,10 @@
 
 Model::Model()
 {
+	this->collisionStatus=new CollisionStatus();
+	*(this->collisionStatus)=CollisionStatus::none;
 
+	this->isHandling=false;
 }
 
 
