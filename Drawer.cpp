@@ -115,7 +115,7 @@ void Drawer::HandleCollisions()
 	for(auto i = this->collidableObjects.begin(); i!=this->collidableObjects.end(); i++)
 	{
 																											// kat kolizji, promien
-		CollisionDetector::CheckForCollisions(i->first->modelMatrix,this->params->observer,this->params->center,16,4,i->second);
+		CollisionDetector::CheckForCollisions(i->first->modelMatrix,this->params->observer,this->params->center,15,3,i->second);
 		if(*(i->second)==CollisionStatus::detected)
 		{
 			std::cout<<"Collision!"<<std::endl;

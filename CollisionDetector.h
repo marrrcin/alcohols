@@ -59,6 +59,31 @@ private:
 		
 	}
 
+	static short DetermineQuadrant(glm::vec2 point)
+	{
+		if(point.x>=0 && point.y>=0)
+			return 1;
+		else if(point.x<0 && point.y>0)
+			return 2;
+		else if(point.x<0 && point.y<0)
+			return 3;
+		else
+			return 4;
+		
+	}
+
+	static double CorrectAngleToQuadrant(double angle,short quadrant)
+	{
+		if(quadrant==1)
+			return angle;
+		else if(quadrant==2)
+			return 180.0*degreesToRad+angle;
+		else if(quadrant==3)
+			return 180.0*degreesToRad+angle;
+		else
+			return 360.0*degreesToRad+angle;
+	}
+
 public:
 	CollisionDetector(void);
 	~CollisionDetector(void);
@@ -160,20 +185,21 @@ public:
 
 	static void CheckForCollisions(glm::mat4 *modelMatrix,glm::vec3 &camera,glm::vec3 &lookAt,double angle,double radius,CollisionStatus *status)
 	{
-		glm::vec2 p1,p2,p3; //punkty trojkata
+		glm::vec2 p1,p2,p3,tmp; //punkty trojkata
 		p1.x=camera.x;
 		p1.y=camera.z;
 
-		double directionAngle = atan2(lookAt.z,lookAt.x);
+		
+		tmp.x = lookAt.x-camera.x;
+		tmp.y = lookAt.z-camera.z;
+		double directionAngle = atan(tmp.y/tmp.x); //ustawienie, jakby camera byla srodkiem ukladu wpolrzednych
+		directionAngle = CorrectAngleToQuadrant(directionAngle,DetermineQuadrant(tmp));
+
+
 		angle = angle*degreesToRad;
 
 		double r = 1.5*radius;
 
-		glm::vec2 base;
-
-		//wektor bazowy, o dlugosci r, w kierunku lookAt
-		base.x = r * cos(directionAngle)+camera.x;
-		base.y = r * sin(directionAngle)+camera.z;
 
 		//przesuniecie wektora bazowego o kat +angle i -angle
 		p2.x = r * cos(directionAngle+angle)+camera.x;
@@ -190,11 +216,17 @@ public:
 		if(IsPointInTriangle(p1,p2,p3,centerOfModel))
 		{
 			if(*status!=CollisionStatus::handling)
+			{
 				*status=CollisionStatus::detected;
+			}
+				
 		}
 		else
 		{
-			*status=CollisionStatus::none;
+			if(*status!=CollisionStatus::handling)
+			{
+				*status=CollisionStatus::none;
+			}
 		}
 			
 
