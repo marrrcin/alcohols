@@ -50,7 +50,7 @@ public:
 		{
 			case Action::rotate:
 			{
-								   this->rotateAngle += 10 * (x + y + z);
+				this->rotateAngle += 10 * (x + y + z);
 				break;
 			}
 			case Action::scale:
@@ -80,20 +80,20 @@ public:
 		{
 		case ActionAxis::x:
 		{
-							  this->rotateX = this->rotateX>=1?0:1;
-							  break;
+			this->rotateX = this->rotateX>=1?0:1;
+			break;
 		}
 
 		case ActionAxis::y:
 		{
-							  this->rotateY = this->rotateY>=1 ? 0 : 1;
-							  break;
+			this->rotateY = this->rotateY >= 1 ? 0 : 1;
+			break;
 		}
 
 		case ActionAxis::z:
 		{
-							  this->rotateZ = this->rotateZ>=1?0:1;
-							  break;
+			this->rotateZ = this->rotateZ >= 1 ? 0 : 1;
+			break;
 		}
 
 		default:

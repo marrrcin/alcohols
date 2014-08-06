@@ -1,4 +1,4 @@
-#include "tga.h"
+#include "tga.h" // Czy to jest jakaœ zewnetrzna biblioteka?
 
 TGAImg::TGAImg()
 { 

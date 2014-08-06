@@ -23,6 +23,8 @@
 	2. potem zmieniasz konstruktor na:
 	this->QuickLoadFromFiles("plik");
 
+	^ to wy¿ej wyjaœnia moje w¹tpliwoœci co do tej metody LoadModelFromObjFile :) OG $ (musia³am)
+
 	LoadMaterialFromMtlFile(std::string fileName); ->na przysz³oœæ, do wczytywania materia³ów. Poleg³em przy pierwszej
 	próbie u¿ycia ich
 

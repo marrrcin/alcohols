@@ -17,6 +17,7 @@ Model::~Model()
 {
 }
 
+// poproszê o jakiœ komentarz do tej metody, nawet bardzo ogólny
 void Model::LoadModelFromObjFile(std::string fileName)
 {
 	std::ifstream file(fileName.c_str(), std::ios::in);
@@ -41,6 +42,8 @@ void Model::LoadModelFromObjFile(std::string fileName)
 		firstChar = buffer.substr(0, 2);
 		stringStream.clear();
 		stringStream.str(buffer.substr(2));
+
+		//szczególnie do tej czêœci poni¿ej
 		if (firstChar == "v " || firstChar == "vn")
 		{
 			glm::vec3 vertex;

@@ -63,9 +63,9 @@ private:
 	{
 		if(point.x>=0 && point.y>=0)
 			return 1;
-		else if(point.x<0 && point.y>0)
+		else if(point.x<0 && point.y>=0)
 			return 2;
-		else if(point.x<0 && point.y<0)
+		else if(point.x<=0 && point.y<0)
 			return 3;
 		else
 			return 4;
@@ -118,7 +118,7 @@ public:
 			if (file.eof())
 				break;
 
-			boundPoints.push_back(glm::vec2(x+0.0001,y+0.0001));
+			boundPoints.push_back(glm::vec2(x+0.0001,y+0.0001)); // dlaczego tutaj dodajemy 0,0001?
 		}while(!file.eof());
 
 		//dla kazdej pary trzeba wyzmaczyc funkcje liniowa
@@ -189,7 +189,7 @@ public:
 		p1.x=camera.x;
 		p1.y=camera.z;
 
-		
+		// to poni¿ej - sprytne :)
 		tmp.x = lookAt.x-camera.x;
 		tmp.y = lookAt.z-camera.z;
 		double directionAngle = atan(tmp.y/tmp.x); //ustawienie, jakby camera byla srodkiem ukladu wpolrzednych
@@ -198,7 +198,7 @@ public:
 
 		angle = angle*degreesToRad;
 
-		double r = 1.5*radius;
+		double r = 1.5*radius; // sk¹d 1,5?
 
 
 		//przesuniecie wektora bazowego o kat +angle i -angle

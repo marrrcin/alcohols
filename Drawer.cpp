@@ -19,7 +19,7 @@ Drawer::~Drawer()
 
 	for(auto it = this->collidableObjects.begin();it!=this->collidableObjects.end();++it)
 	{
-		delete (*it).second;
+		delete (*it).second; // co tak naprawdê jest usuwane?
 	}
 
 	for (auto it = this->objectsToDraw.begin(); it != this->objectsToDraw.end(); ++it)

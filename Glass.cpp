@@ -8,6 +8,9 @@ albo poradziæ sobie lepiej z tym szk³em w oknach
 
 Fixed: wystarczy³o zmieniæ kolejnoœæ rysowania.
 (10 maja 2014) MZ
+
+Ekstra!
+(6 sierpnia 2014) OG
 */
 Glass::Glass()
 {
