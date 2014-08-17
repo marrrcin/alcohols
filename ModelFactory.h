@@ -14,6 +14,7 @@
 #include "Shelves.h"
 #include "Lamp.h"
 #include "BeerCan.h"
+#include "WineBottle.h"
 #include "CollisionDetector.h"
 
 class ModelFactory

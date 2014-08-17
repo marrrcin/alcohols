@@ -36,7 +36,7 @@ ModelMover::ModelMover()
 	this->rotateX = 1;
 	this->rotateY = 0;
 	this->rotateZ = 0;
-	this->isEnabled = false;
+	this->isEnabled = true;
 }
 
 

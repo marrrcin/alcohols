@@ -26,6 +26,8 @@ void ModelFactory::CreateObjectsToDraw(std::map<std::string,Model*> *objects)
 		(*objects)["lamp"] = new Lamp();
 
 		(*objects)["beerCan"] = new BeerCan();
+
+		(*objects)["wineBottle"] = new WineBottle();
 }
 
 CollisionStatus* ModelFactory::GetNoCollisionStatus()
