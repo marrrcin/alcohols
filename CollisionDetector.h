@@ -5,7 +5,7 @@
 
 typedef enum _colstat
 {
-	detected,handling,handled,none
+	detected, handling, handled, none
 } CollisionStatus;
 
 class CollisionDetector
@@ -215,17 +215,17 @@ public:
 
 		if(IsPointInTriangle(p1,p2,p3,centerOfModel))
 		{
-			if(*status!=CollisionStatus::handling)
+			if(*status != CollisionStatus::handling)
 			{
-				*status=CollisionStatus::detected;
+				*status = CollisionStatus::detected;
 			}
 				
 		}
 		else
 		{
-			if(*status!=CollisionStatus::handling)
+			if(*status != CollisionStatus::handling)
 			{
-				*status=CollisionStatus::none;
+				*status = CollisionStatus::none;
 			}
 		}
 			

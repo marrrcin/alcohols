@@ -6,15 +6,15 @@
 
 EventHandler::EventHandler()
 {
-	this->cameraSpeed=0.5f;
-	this->cameraYrange=15.0f;
+	this->cameraSpeed = 0.4f;
+	this->cameraYrange = 10.0f;
 
-	this->mouseSpeed=0.1f;
+	this->mouseSpeed = 0.1f;
 
-	this->lastMouseX=1024>>1;
-	this->lastMouseY=576>>1;
+	this->lastMouseX = 1024>>1;
+	this->lastMouseY = 576>>1;
 
-	this->toRad= 3.14159265/180.0;
+	this->toRad = 3.14159265/180.0;
 }
 
 
@@ -93,17 +93,17 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	else if (c == 'r')
 	{
 		this->params->currentAction = rotate;
-		std::cout << "current action : rotate" << std::endl;
+		std::cout << "current action: rotate" << std::endl;
 	}
 	else if (c == 't')
 	{
 		this->params->currentAction = translate;
-		std::cout << "current action : translate" << std::endl;
+		std::cout << "current action: translate" << std::endl;
 	}
 	else if (c == 'u')
 	{
 		this->params->currentAction = scale;
-		std::cout << "current action : scale" << std::endl;
+		std::cout << "current action: scale" << std::endl;
 	}
 	else if (c == 'x')
 	{
@@ -113,7 +113,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 			this->params->modelMover->RotateUpdate(ActionAxis::x);
 		}
 			
-		std::cout << "current axis : x" << std::endl;
+		std::cout << "current axis: x" << std::endl;
 	}
 	else if (c == 'y')
 	{
@@ -122,7 +122,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 		{
 			this->params->modelMover->RotateUpdate(ActionAxis::y);
 		}
-		std::cout << "current axis : y" << std::endl;
+		std::cout << "current axis: y" << std::endl;
 	}
 	else if (c == 'z')
 	{
@@ -132,7 +132,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 			this->params->modelMover->RotateUpdate(ActionAxis::z);
 		}
 			
-		std::cout << "current axis : z" << std::endl;
+		std::cout << "current axis: z" << std::endl;
 	}
 	else if (c == 'm')
 	{
@@ -157,7 +157,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	{
 		//kamera pos debug
 		std::cout<<"cam x "<<this->params->observer.x<<", y "<<this->params->observer.y<<", z "<<this->params->observer.z<<std::endl;
-		std::cout<<"lookAt x"<<this->params->center.x<<" ,y "<<this->params->center.y<<",z "<<this->params->center.z<<std::endl;
+		std::cout<<"lookAt x "<<this->params->center.x<<", y "<<this->params->center.y<<", z "<<this->params->center.z<<std::endl;
 
 		//kucanie
 		this->params->crouch = !this->params->crouch;

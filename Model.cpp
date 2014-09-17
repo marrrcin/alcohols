@@ -6,15 +6,25 @@
 
 Model::Model()
 {
-	this->collisionStatus=new CollisionStatus();
-	*(this->collisionStatus)=CollisionStatus::none;
+	this->collisionStatus = new CollisionStatus();
+	*(this->collisionStatus) = CollisionStatus::none;
 
 	this->isHandling=false;
+
+	this->alcohol = nullptr;
 }
 
 
 Model::~Model()
 {
+}
+
+bool Model::isDrinkable()
+{
+	if (this->alcohol == nullptr)
+		return false;
+	else
+		return true;
 }
 
 // poproszê o jakiœ komentarz do tej metody, nawet bardzo ogólny
@@ -144,7 +154,8 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 	std::fstream file;
 	std::string fileName2;
 	unsigned i;
-	fileName2 = fileName;
+	std::string folderName = "quickLoad/";
+	fileName2 = folderName.append(fileName);
 	fileName2.append("Vertices.txt");
 	
 	file.open(fileName2.c_str(), std::fstream::out);
@@ -155,7 +166,7 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 	}
 	file.close();
 
-	fileName2 = fileName;
+	fileName2 = folderName.append(fileName);
 	fileName2.append("Normals.txt");
 	file.open(fileName2.c_str(), std::fstream::out);
 	file << this->normals.size() << std::endl;
@@ -169,6 +180,9 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 
 void Model::QuickLoadFromFiles(std::string baseFileName)
 {
+	std::string folderName = "quickLoad/";
+	baseFileName = folderName.append(baseFileName);
+
 	std::string fileName = baseFileName;
 	fileName.append("Vertices.txt");
 	std::thread t1(Model::LoadVectorFromFile, fileName, &this->vertices);

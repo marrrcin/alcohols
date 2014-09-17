@@ -2,6 +2,8 @@
 #include "stdafx.h"
 #include "ModelMover.h"
 #include "CollisionDetector.h"
+#include "Alcohol.h"
+
 //JAK TO U¯YC? Patrz Example1.h
 
 //te structy poni¿ej to "na potem" do materia³ów i oœwietlenia
@@ -86,6 +88,8 @@ public:
 	CollisionStatus *collisionStatus;
 	bool isHandling;
 
+	Alcohol *alcohol;
+	bool isDrinkable();
 
 	ModelMover *modelMover;
 };
