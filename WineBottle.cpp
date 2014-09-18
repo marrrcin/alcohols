@@ -31,12 +31,11 @@ void WineBottle::Draw()
 		*M = this->modelMover->Translate(*M);
 	}
 
-	glEnable(GL_COLOR_MATERIAL);
-	glColor3f(0.0 / 255, 200.0 / 255, 0.0 / 255);
-
+	glMatrixMode(GL_MODELVIEW);
 	glLoadMatrixf(glm::value_ptr(*V**M));
+	glEnable(GL_COLOR_MATERIAL);
+	glColor3f(0.0f, 1.0f, 0.0f);
 	this->RenderObject();
-
 	glDisable(GL_COLOR_MATERIAL);
 }
 

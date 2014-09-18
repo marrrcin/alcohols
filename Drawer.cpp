@@ -153,7 +153,7 @@ void Drawer::PrepareNextFrame()
 	glutPostRedisplay();
 }
 
-void Drawer::PassMatrixesToAllObjects(glm::mat4 *viewMatrix,glm::mat4 *pMatrix)
+void Drawer::PassMatrixesToAllObjects(glm::mat4 *viewMatrix, glm::mat4 *pMatrix)
 {
 	for (auto it = this->objectsToDraw.begin(); it != this->objectsToDraw.end(); ++it)
 	{

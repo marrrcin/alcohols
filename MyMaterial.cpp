@@ -38,10 +38,10 @@ GLuint MyMaterial::readTexture(const char* filename)
 		else if (img.GetBPP() == 32)
 			glTexImage2D(GL_TEXTURE_2D, 0, 4, img.GetWidth(), img.GetHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, img.GetImg());
 		else
-			std::cout << "Nieobs³ugiwany format obrazka w pliku " << filename << std::endl;
+			std::cout << "Cannot handle format of file: " << filename << std::endl;
 	}
 	else
-		std::cout << "B³¹d przy wczytywaniu pliku " << filename << std::endl;
+		std::cout << "Cannot read file: " << filename << std::endl;
 	
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

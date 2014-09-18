@@ -4,9 +4,13 @@
 #include "CollisionDetector.h"
 #include "Alcohol.h"
 
-//JAK TO U¯YC? Patrz Example1.h
+typedef struct _Face
+{
+	int x;
+	int y;
+	int z;
+} Face;
 
-//te structy poni¿ej to "na potem" do materia³ów i oœwietlenia
 typedef struct _Material
 {
 	float ambient[3];
@@ -27,8 +31,10 @@ typedef struct _Lights
 	float spotlightAt[4];
 } Lights;
 
+
 class Model
 {
+
 private:
 	void PrepareFaceString(std::string &line);
 
@@ -38,21 +44,21 @@ protected:
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec3> normals;
 	std::vector<glm::vec3> textures;
-	std::vector<GLushort> elements;
+
+	std::vector <int> vertIndex;
+	std::vector <int> textIndex;
+	std::vector <int> normIndex;
 
 	Material material;
 	Lights lights;
 		
-	
-
-
 	virtual void RenderObject();
+
 public:
 	Model();
 	~Model();
 	virtual void Draw() = 0;
 	virtual void NextFrame() = 0;
-
 
 	virtual void LoadDefaultPerspectiveMatrix();
 	virtual void LoadModelFromObjFile(std::string fileName);
@@ -84,6 +90,16 @@ public:
 	glm::mat4 *viewMatrix;
 	glm::mat4 *perspectiveMatrix;
 	glm::mat4 *modelMatrix;
+
+	GLuint vao; // uchwyt na vao
+	//uchwyty na vbo
+	GLuint bufVertices;  
+	GLuint bufTextureCoords;
+	GLuint bufNormals; 
+	GLuint bufIndices;
+
+	int vertexCount;
+	int materialIndex; 
 
 	CollisionStatus *collisionStatus;
 	bool isHandling;

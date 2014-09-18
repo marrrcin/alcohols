@@ -45,18 +45,18 @@ GLuint MyShader::loadShader(GLenum shaderType, const char* fileName) {
 
 MyShader::MyShader(const char* vertexShaderFile, const char* geometryShaderFile, const char* fragmentShaderFile) {
 
-	std::cout << "> Loading vertex shader..." << std::endl;
+	std::cout << "Loading vertex shader" << std::endl;
 	vertexShader = loadShader(GL_VERTEX_SHADER, vertexShaderFile);
 
 	if (geometryShaderFile != NULL) {
-		std::cout << "> Loading geometry shader..." << std::endl;
+		std::cout << "Loading geometry shader" << std::endl;
 		geometryShader = loadShader(GL_GEOMETRY_SHADER, geometryShaderFile);
 	}
 	else {
 		geometryShader = 0;
 	}
 
-	std::cout << "> Loading fragment shader..." << std::endl;
+	std::cout << "Loading fragment shader" << std::endl;
 	fragmentShader = loadShader(GL_FRAGMENT_SHADER, fragmentShaderFile);
 
 	shaderProgram = glCreateProgram();
@@ -81,7 +81,7 @@ MyShader::MyShader(const char* vertexShaderFile, const char* geometryShaderFile,
 		delete[]infoLog;
 	}
 
-	std::cout << "> SHADER PROGRAM CREATED!" << std::endl;
+	std::cout << "Shader program is ready!" << std::endl;
 }
 
 MyShader::~MyShader() {
