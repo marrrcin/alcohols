@@ -121,6 +121,8 @@
     <ClCompile Include="ModelFactory.cpp" />
     <ClCompile Include="ModelMover.cpp" />
     <ClCompile Include="Mug.cpp" />
+    <ClCompile Include="MyMaterial.cpp" />
+    <ClCompile Include="MyShader.cpp" />
     <ClCompile Include="OpenGLInitializer.cpp" />
     <ClCompile Include="RoomModel.cpp" />
     <ClCompile Include="Shelves.cpp" />
@@ -148,6 +150,8 @@
     <ClInclude Include="ModelFactory.h" />
     <ClInclude Include="ModelMover.h" />
     <ClInclude Include="Mug.h" />
+    <ClInclude Include="MyMaterial.h" />
+    <ClInclude Include="MyShader.h" />
     <ClInclude Include="OpenGLInitializer.h" />
     <ClInclude Include="RoomModel.h" />
     <ClInclude Include="Shelves.h" />

@@ -22,8 +22,7 @@ void WineBottle::Draw()
 	this->modelMatrix = M;
 
 	*M = glm::scale(*M, glm::vec3(1.3f, 1.3f, 1.3f));
-	*M = glm::translate(*M, glm::vec3(0, 1.6f, 1.7f));
-	*M = glm::translate(*M, glm::vec3(1.0f, 1.0f, 1.0f));
+	*M = glm::translate(*M, glm::vec3(1.0f, 2.6f, 2.7f));
 
 	if (this->modelMover->isEnabled)
 	{

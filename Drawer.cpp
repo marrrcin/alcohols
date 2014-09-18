@@ -47,7 +47,7 @@ void Drawer::Display()
 	//kat widzenia , stosunek wymiarow okna,plaszczyzna odcinania bliska, daleka, 
 	glm::mat4 P = glm::perspective(this->params->perspectiveAngle, 16.0f/9.0f, 1.0f, 150.0f);
 
-	//Obliczenie macierzy widoku (de fact ustawienie kamery na scenie);
+	//Obliczenie macierzy widoku (de facto ustawienie kamery na scenie);
 	glm::mat4 V = glm::lookAt(
 		this->params->observer, //pozycja kamery
 		this->params->center, //"CO JA PACZE"

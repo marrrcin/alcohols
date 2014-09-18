@@ -43,7 +43,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 	std::istringstream stringStream, helperStream;
 	std::vector<glm::vec3> verticesBuffer;
 	std::vector<glm::vec3> normalsBuffer;
-	std::vector<glm::vec2> texturesBuffer;
+	std::vector<glm::vec3> texturesBuffer;
 	this->vertices.clear();
 	this->normals.clear();
 	do
@@ -70,9 +70,10 @@ void Model::LoadModelFromObjFile(std::string fileName)
 		}
 		else if (firstChar == "vt")
 		{
-			glm::vec2 texture;
+			glm::vec3 texture;
 			stringStream >> texture.x;
 			stringStream >> texture.y;
+			stringStream >> texture.z;
 			texturesBuffer.push_back(texture);
 			hasTextures = true;
 		}
@@ -158,10 +159,10 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 	std::string fileName2;
 	unsigned i;
 	std::string folderName = "quickLoad/";
+
 	fileName2 = folderName.append(fileName);
 	fileName2.append("Vertices.txt");
-	
-	file.open(fileName2.c_str(), std::fstream::out);
+		file.open(fileName2.c_str(), std::fstream::out);
 	file << this->vertices.size() << std::endl;
 	for (i = 0; i < this->vertices.size(); i++)
 	{
@@ -179,6 +180,17 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 	}
 	file.close();
 
+	/*
+	fileName2 = folderName.append(fileName);
+	fileName2.append("Textures.txt");
+	file.open(fileName2.c_str(), std::fstream::out);
+	file << this->textures.size() << std::endl;
+	for (i = 0; i < this->textures.size(); i++)
+	{
+		file << this->textures[i].x << " " << this->textures[i].y << " " << this->textures[i].z << std::endl;
+	}
+	file.close();
+	*/
 }
 
 void Model::QuickLoadFromFiles(std::string baseFileName)
@@ -193,9 +205,15 @@ void Model::QuickLoadFromFiles(std::string baseFileName)
 	fileName = baseFileName;
 	fileName.append("Normals.txt");
 	std::thread t2(Model::LoadVectorFromFile, fileName, &this->normals);
+	/*
+	fileName = baseFileName;
+	fileName.append("Textures.txt");
+	std::thread t3(Model::LoadVectorFromFile, fileName, &this->textures);
+	*/
 
 	t1.join();
 	t2.join();
+	//t3.join();
 }
 
 void Model::LoadDefaultPerspectiveMatrix()

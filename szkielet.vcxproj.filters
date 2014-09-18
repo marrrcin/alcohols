@@ -90,6 +90,12 @@
     <ClCompile Include="Alcohol.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cube.h">
@@ -165,6 +171,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WineBottle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMaterial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

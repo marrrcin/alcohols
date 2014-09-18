@@ -37,7 +37,7 @@ private:
 protected:
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec3> normals;
-	std::vector<glm::vec2> textures;
+	std::vector<glm::vec3> textures;
 	std::vector<GLushort> elements;
 
 	Material material;
