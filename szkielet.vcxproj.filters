@@ -119,9 +119,6 @@
     <ClInclude Include="Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Drawing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RoomModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>

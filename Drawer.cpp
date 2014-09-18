@@ -79,12 +79,7 @@ void Drawer::Display()
 			i->second->Draw();
 		}
 	}
-	/*this->objectsToDraw["beerBottle"]->Draw();
-	this->objectsToDraw["closet1"]->Draw();
-	this->objectsToDraw["table"]->Draw();
-	this->objectsToDraw["barrel"]->Draw();
-	this->objectsToDraw["mug"]->Draw();
-*/
+
 	auto M = glm::mat4(1.0f);
 	auto x = this->params->center.x;
 	auto y = this->params->center.y;
@@ -95,6 +90,7 @@ void Drawer::Display()
 	glLoadMatrixf(glm::value_ptr(V*M));
 	glutSolidSphere(1.0f,10,10);
 	glDisable(GL_COLOR_MATERIAL);
+	
 	this->objectsToDraw["glass"]->Draw();
 
 	//kolizje v1
@@ -121,11 +117,12 @@ void Drawer::HandleCollisions()
 			std::cout<<"Collision with object: " << i->first << " detected!" <<std::endl;
 			if (i->first->isDrinkable())
 			{
-				std::cout << "Object is drinkable!" << std::endl;
+				std::cout << "This looks tasty!" << std::endl;
+				std::cout << i->first->alcohol->volume << " ml, " << i->first->alcohol->power << "%." << std::endl;
 			}
 			else
 			{
-				std::cout << "Object not drinkable." << std::endl;
+				std::cout << "You better not drink it." << std::endl;
 			}
 			modelWithCollision = i->first;
 			status = i->second;

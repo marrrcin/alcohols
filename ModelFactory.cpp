@@ -54,6 +54,8 @@ void ModelFactory::GetObjectsForCollisionsCheck(std::map<std::string,Model*> *ob
 		status = GetNoCollisionStatus();
 		(*collidableObjects)[object]=status;
 		
+		object = (*objects)["wineBottle"];
+		status = GetNoCollisionStatus();
+		(*collidableObjects)[object] = status;
 
-		
 }

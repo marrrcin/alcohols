@@ -27,9 +27,12 @@ bool Model::isDrinkable()
 		return true;
 }
 
-// poproszê o jakiœ komentarz do tej metody, nawet bardzo ogólny
+
 void Model::LoadModelFromObjFile(std::string fileName)
 {
+	std::string folderName = "obj/";
+	fileName = folderName.append(fileName);
+
 	std::ifstream file(fileName.c_str(), std::ios::in);
 	std::string buffer;
 	std::string firstChar;

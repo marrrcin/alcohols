@@ -3,7 +3,7 @@
 
 BeerCan::BeerCan(void)
 {
-	this->LoadModelFromObjFile("can.obj");
+	this->LoadModelFromObjFile("can.obj"); // magic, do not touch
 	this->ExportLoadedMatrixesToFile("can");
 
 	this->alcohol = new Alcohol(500, 6);

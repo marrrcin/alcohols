@@ -139,7 +139,6 @@
     <ClInclude Include="cube.h" />
     <ClInclude Include="detailed_cube.h" />
     <ClInclude Include="Drawer.h" />
-    <ClInclude Include="Drawing.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="EventParameters.h" />
     <ClInclude Include="Example1.h" />
