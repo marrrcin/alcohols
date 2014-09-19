@@ -3,7 +3,7 @@
 WineBottle::WineBottle()
 {
 	this->QuickLoadFromFiles("wineBottle");
-
+	//this->LoadModelFromObjFile("heineken.obj");
 	this->alcohol = new Alcohol(700, 15);
 }
 

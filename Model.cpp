@@ -50,8 +50,13 @@ void Model::LoadModelFromObjFile(std::string fileName)
 	{
 		buffer.clear();
 		std::getline(file, buffer);
+
 		if (file.eof())
 			break;
+
+		if (buffer.length() < 2)
+			buffer = "zzzzz"; // in case line shorter than 2 chars
+
 		firstChar = buffer.substr(0, 2);
 		stringStream.clear();
 		stringStream.str(buffer.substr(2));
@@ -180,7 +185,7 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 	}
 	file.close();
 
-	/*
+	/* we should probably use these later
 	fileName2 = folderName.append(fileName);
 	fileName2.append("Textures.txt");
 	file.open(fileName2.c_str(), std::fstream::out);
