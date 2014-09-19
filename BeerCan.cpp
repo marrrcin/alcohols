@@ -4,6 +4,7 @@
 BeerCan::BeerCan(void)
 {
 	this->LoadModelFromObjFile("can.obj"); // magic, do not touch
+	//quickload doesn't work and I don't know why
 	this->ExportLoadedMatrixesToFile("can");
 
 	this->alcohol = new Alcohol(500, 6);

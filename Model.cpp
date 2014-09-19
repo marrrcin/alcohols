@@ -82,6 +82,8 @@ void Model::LoadModelFromObjFile(std::string fileName)
 			texturesBuffer.push_back(texture);
 			hasTextures = true;
 		}
+		//still not sure if this one works properly
+		//will look closely into that soon 
 		else if (firstChar == "f ")
 		{
 			this->PrepareFaceString(buffer);
@@ -109,7 +111,6 @@ void Model::LoadModelFromObjFile(std::string fileName)
 			}
 
 		}
-
 
 	} while (!file.eof()); 
 

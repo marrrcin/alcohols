@@ -15,6 +15,7 @@ WineBottle::~WineBottle()
 
 void WineBottle::Draw()
 {
+	//not sure what I do wrong here, but collision detection on this object is just crazy
 	this->LoadDefaultPerspectiveMatrix();
 
 	glm::mat4 *V = this->viewMatrix;
