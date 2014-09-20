@@ -1,16 +1,12 @@
 // alcohols.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
-#include "Drawer.h"
-#include "OpenGLInitializer.h"
-
-
+#include "alcohols.h"
 
 using namespace std;
 
 
-
+Lights *globalLights;
 OpenGLInitializer* OpenGLInitializer::self;
 int _tmain(int argc, char* argv[])
 {

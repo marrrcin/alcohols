@@ -3,6 +3,7 @@
 #include "ModelMover.h"
 #include "ModelFactory.h"
 
+
 Drawer::Drawer(EventParameters *params)
 {
 	ModelFactory modelFactory;
@@ -10,6 +11,7 @@ Drawer::Drawer(EventParameters *params)
 	modelFactory.GetObjectsForCollisionsCheck(&(this->objectsToDraw), &(this->collidableObjects));
 	this->params = params;
 	this->AssignModelMover();
+
 }
 
 
@@ -26,6 +28,7 @@ Drawer::~Drawer()
 	{
 		delete (*it).second;
 	}
+
 }
 
 void Drawer::AssignModelMover()
@@ -60,18 +63,15 @@ void Drawer::Display()
 
 	//Przygotowanie do ³adowania macierzy widoku i modelu
 	glMatrixMode(GL_MODELVIEW);
-	
-	
-	
-	//glLightfv(GL_LIGHT3,GL_AMBIENT,ambientColor);
+
 	
 	if(this->params->light3on)
 		glEnable(GL_LIGHT3);
 	else
 		glDisable(GL_LIGHT3);
-	this->objectsToDraw["room"]->Draw();
-	
 
+
+	this->objectsToDraw["room"]->Draw();
 	for (auto i = this->objectsToDraw.begin(); i != this->objectsToDraw.end(); i++)
 	{
 		if (i->first != "room" && i->first != "glass")
@@ -84,13 +84,16 @@ void Drawer::Display()
 	auto x = this->params->center.x;
 	auto y = this->params->center.y;
 	auto z = this->params->center.z;
-	M = glm::translate(M,glm::vec3(x,y,z));
+	M = glm::translate(M, glm::vec3(x, y, z));
+
 	glEnable(GL_COLOR_MATERIAL);
-	glColor3d(1,0,0);
-	glLoadMatrixf(glm::value_ptr(V*M));
-	glutSolidSphere(1.0f,10,10);
+	glColor3d(1, 0, 0);
+	glLoadMatrixf(glm::value_ptr(V * M));
+	// czerwone cos
+	glutSolidSphere(1.0f, 10, 10);
 	glDisable(GL_COLOR_MATERIAL);
 	
+	//na koncu szyby
 	this->objectsToDraw["glass"]->Draw();
 
 	//kolizje v1

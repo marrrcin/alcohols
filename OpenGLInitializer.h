@@ -2,6 +2,7 @@
 #include <string>
 #include "Drawer.h"
 #include "EventHandler.h"
+
 class OpenGLInitializer
 {
 private:

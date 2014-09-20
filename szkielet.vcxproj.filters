@@ -33,9 +33,6 @@
     <ClCompile Include="Drawer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Example1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -99,6 +96,9 @@
     <ClCompile Include="Cognac.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lights.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cube.h">
@@ -120,9 +120,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Drawer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Example1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
@@ -183,6 +180,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cognac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lights.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alcohols.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

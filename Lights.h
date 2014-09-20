@@ -2,14 +2,6 @@
 #define MAX_LIGHT_COUNT 5
 #include "stdafx.h"
 
-typedef struct _light
-{
-	float position[4];
-	float color[4];
-	float radius;
-	float intensity;
-
-} Light;
 
 class Lights
 {
@@ -19,7 +11,14 @@ public:
 	void addLight(float x, float y, float z, float r, float g, float b, float radius, float intensity);
 
 	int lightCount;
-	std::vector<Light*> *lights;
+	float positions[4 * MAX_LIGHT_COUNT];
+	float colors[4 * MAX_LIGHT_COUNT];
+	float radius[MAX_LIGHT_COUNT];
+	float intensity[MAX_LIGHT_COUNT];
 
+	int getLightCount()
+	{
+		return lightCount;
+	}
 };
 

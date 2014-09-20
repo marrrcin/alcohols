@@ -1,6 +1,6 @@
-#include "stdafx.h"
 #include "Model.h"
-#include <thread>
+#include "Drawer.h"
+#include "alcohols.h"
 
 //JAK TO U¯YC? Patrz Example1.h
 
@@ -27,10 +27,13 @@ void Model::DrawModel()
 	glUniformMatrix4fv(this->material->shader->getUniformLocation("P"), 1, false, glm::value_ptr(*this->perspectiveMatrix));
 	glUniformMatrix4fv(this->material->shader->getUniformLocation("V"), 1, false, glm::value_ptr(*this->viewMatrix));
 	glUniformMatrix4fv(this->material->shader->getUniformLocation("M"), 1, false, glm::value_ptr(*this->modelMatrix));
-	glUniform4fv(this->material->shader->getUniformLocation("LIGHTS_POSITION"), lights.getMaxLightCount(), lights.position);
-	glUniform1fv(this->material->shader->getUniformLocation("LIGHTS_RADIUS"), lights.getLightCount(), lights.radius);
-	glUniform1fv(this->material->shader->getUniformLocation("LIGHTS_INTENSITY"), lights.getLightCount(), lights.intensity);
-	glUniform1f(this->material->shader->getUniformLocation("LIGHTS_COUNT"), lights.getLightCount());
+
+	glUniform1f(this->material->shader->getUniformLocation("LIGHTS_COUNT"), globalLights->lightCount);
+
+	glUniform4fv(this->material->shader->getUniformLocation("LIGHTS_POSITION"), globalLights->lightCount, globalLights->positions);
+	glUniform1fv(this->material->shader->getUniformLocation("LIGHTS_RADIUS"), globalLights->lightCount, globalLights->radius);
+	glUniform1fv(this->material->shader->getUniformLocation("LIGHTS_INTENSITY"), globalLights->lightCount, globalLights->intensity);
+
 
 	//ustawienie tekstur
 	glUniform1i(this->material->shader->getUniformLocation("textureMap0"), 0); //zmienna jednorodna textureMap0 reprezentuje jednostkê teksturuj¹c¹ numer 0
@@ -41,7 +44,7 @@ void Model::DrawModel()
 	glBindTexture(GL_TEXTURE_2D, this->material->specularMap); //Zwi¹¿ aktywn¹ jednostkê teksturuj¹c¹ z tekstur¹ o uchwycie zapisanym w tex1
 	glBindVertexArray(this->vao);
 
-	glDrawArrays(GL_TRIANGLES, 0, arrayModels[i]->vertexCount);
+	glDrawArrays(GL_TRIANGLES, 0, this->vertexCount);
 
 	glBindVertexArray(0);
 }

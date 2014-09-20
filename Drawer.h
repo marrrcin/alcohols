@@ -2,6 +2,7 @@
 #include "Model.h"
 #include "EventParameters.h"
 #include "CollisionDetector.h"
+
 class Drawer
 {
 protected:
@@ -20,7 +21,6 @@ public:
 
 	std::map<std::string, Model*> objectsToDraw;
 	std::map<Model*, CollisionStatus*> collidableObjects;
-
 
 	EventParameters *params;
 };

@@ -4,6 +4,11 @@
 #include "CollisionDetector.h"
 #include "Alcohol.h"
 #include "MyMaterial.h"
+#include <thread>
+#include "GL/glew.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
 
 typedef struct _Face
 {
@@ -12,17 +17,8 @@ typedef struct _Face
 	int z;
 } Face;
 
-typedef struct _Material
-{
-	float ambient[3];
-	float diffuse[3];
-	float specular[3];
-	float shiness;
-	float dissolve;
-	float opticalDensity;
-} Material;
 
-typedef struct _Lights
+typedef struct _Light
 {
 	float ambient[4];
 	float diffuse[4];
@@ -30,7 +26,7 @@ typedef struct _Lights
 	float position[4];
 	float spotlightPos[4];
 	float spotlightAt[4];
-} Lights;
+} Light;
 
 
 class Model
@@ -50,8 +46,8 @@ protected:
 	std::vector <int> textIndex;
 	std::vector <int> normIndex;
 
+	Light lights;
 	MyMaterial *material;
-	Lights lights;
 		
 	virtual void RenderObject();
 

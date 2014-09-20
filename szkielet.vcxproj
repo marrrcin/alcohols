@@ -76,6 +76,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -115,9 +116,9 @@
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="EventParameters.cpp" />
-    <ClCompile Include="Example1.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="Lamp.cpp" />
+    <ClCompile Include="Lights.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ModelFactory.cpp" />
     <ClCompile Include="ModelMover.cpp" />
@@ -134,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Alcohol.h" />
+    <ClInclude Include="alcohols.h" />
     <ClInclude Include="Barrel.h" />
     <ClInclude Include="BeerBottle.h" />
     <ClInclude Include="BeerCan.h" />
@@ -145,9 +147,9 @@
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="EventParameters.h" />
-    <ClInclude Include="Example1.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="Lamp.h" />
+    <ClInclude Include="Lights.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelFactory.h" />
     <ClInclude Include="ModelMover.h" />
