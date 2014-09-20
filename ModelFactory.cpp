@@ -28,6 +28,9 @@ void ModelFactory::CreateObjectsToDraw(std::map<std::string,Model*> *objects)
 		(*objects)["beerCan"] = new BeerCan();
 
 		(*objects)["wineBottle"] = new WineBottle();
+
+		(*objects)["cognac"] = new Cognac();
+
 }
 
 CollisionStatus* ModelFactory::GetNoCollisionStatus()
@@ -47,7 +50,7 @@ void ModelFactory::GetObjectsForCollisionsCheck(std::map<std::string,Model*> *ob
 		(*collidableObjects)[object]=status;
 
 		object = (*objects)["mug"];
-		status = GetNoCollisionStatus(); //tak, za kazdym razem tworzy nowy status, kazdy obiekt ma swoj unikalny
+		status = GetNoCollisionStatus(); 
 		(*collidableObjects)[object]=status;
 
 		object = (*objects)["beerCan"];
@@ -55,6 +58,10 @@ void ModelFactory::GetObjectsForCollisionsCheck(std::map<std::string,Model*> *ob
 		(*collidableObjects)[object]=status;
 		
 		object = (*objects)["wineBottle"];
+		status = GetNoCollisionStatus();
+		(*collidableObjects)[object] = status;
+
+		object = (*objects)["cognac"];
 		status = GetNoCollisionStatus();
 		(*collidableObjects)[object] = status;
 

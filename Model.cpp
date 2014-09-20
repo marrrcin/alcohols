@@ -27,6 +27,13 @@ bool Model::isDrinkable()
 		return true;
 }
 
+void Model::printInfo()
+{
+	if (this->isDrinkable())
+	{
+		std::cout << "Excellent choice! " << this->alcohol->volume << "ml, " << this->alcohol->power << "% of alcohol." << std::endl;
+	}
+}
 
 void Model::LoadModelFromObjFile(std::string fileName)
 {

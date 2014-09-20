@@ -79,14 +79,14 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 		observer = this->params->observer + this->temp2*this->cameraSpeed;
 		if(CanMoveTo(observer))
 		{
-			this->params->observer+=this->temp2*this->cameraSpeed;
-			this->params->center+=this->temp2*this->cameraSpeed;
+			this->params->observer += this->temp2*this->cameraSpeed;
+			this->params->center += this->temp2*this->cameraSpeed;
 		}
 	}
 	//interakcja z obiektem
 	else if(c==' ')
 	{
-		this->params->collisionAction=true;
+		this->params->collisionAction = true;
 	}
 
 	//obs³uga przesuwacza obiektów
@@ -137,14 +137,18 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	else if (c == 'm')
 	{
 		this->params->modelMover->isEnabled = !this->params->modelMover->isEnabled;
+		if (this->params->modelMover->isEnabled == true)
+			std::cout << "Entered moving mode." << std::endl;
+		else
+			std::cout << "Quitted moving mode." << std::endl;
 	}
 	else if (c == 'i') //up
 	{
-		this->UpdateMover(0.05);
+		this->UpdateMover(10.0);
 	}
 	else if (c == 'k') //down
 	{
-		this->UpdateMover(-0.05);
+		this->UpdateMover(-10.0);
 	}
 	else if (c == 'p')
 	{
@@ -153,7 +157,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 
 	//koniec obs³ugi przesuwacza
 	
-	else if(c=='c')
+	else if(c == 'c')
 	{
 		//kamera pos debug
 		std::cout<<"cam x "<<this->params->observer.x<<", y "<<this->params->observer.y<<", z "<<this->params->observer.z<<std::endl;

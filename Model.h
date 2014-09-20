@@ -106,7 +106,7 @@ public:
 
 	Alcohol *alcohol;
 	bool isDrinkable();
-
+	void Model::printInfo();
 	ModelMover *modelMover;
 };
 

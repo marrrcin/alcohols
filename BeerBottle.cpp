@@ -34,27 +34,9 @@ void BeerBottle::Draw()
 	glLoadMatrixf(glm::value_ptr(*V**M)); 
 
 	glEnable(GL_COLOR_MATERIAL);
-
-	if(*(this->collisionStatus) == CollisionStatus::handling)
-	{
-		if(!this->isHandling)
-		{
-			this->isHandling = true;
-			this->startTime=glutGet(GLUT_ELAPSED_TIME);
-		}
-		
-		if(glutGet(GLUT_ELAPSED_TIME) - this->startTime > 3000)
-		{
-			*(this->collisionStatus) = CollisionStatus::handled;
-			this->isHandling = false;
-		}
-
-		glColor3f(1.0f, 0, 0);
-	}
-	else
-		glColor3f(1.0f, 1.0f, 1.0f);
-	
-	
+	glColor3f(1.0f, 1.0f, 1.0f);
+	if (this->isHandling)
+		glColor3f(1.0f, 0.0f, 0.0f);
 	
 	this->RenderObject();
 	glDisable(GL_COLOR_MATERIAL);

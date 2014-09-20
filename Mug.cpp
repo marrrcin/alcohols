@@ -22,14 +22,16 @@ void Mug::Draw()
 	glm::mat4 *M = new glm::mat4(1.0f);
 	this->modelMatrix = M;
 
-	glEnable(GL_COLOR_MATERIAL);
-	glColor3f(253.0 / 255, 1, 202.0 / 255);
-
 	*M = glm::translate(*M, glm::vec3(11.1f, 3.35f, -10.15f));
 	*M = glm::scale(*M, glm::vec3(5, 5, 5));
 	*M = glm::rotate(*M, 300.0f, glm::vec3(0, 1, 0));
 
 	glLoadMatrixf(glm::value_ptr(*V**M));
+
+	glEnable(GL_COLOR_MATERIAL);
+	glColor3f(253.0 / 255, 1, 202.0 / 255);
+	if (*(this->collisionStatus) == CollisionStatus::detected || *(this->collisionStatus) == CollisionStatus::handling)
+		glColor3f(1.0f, 0.0f, 0.0f);
 	this->RenderObject();
 	glDisable(GL_COLOR_MATERIAL);
 }

@@ -109,6 +109,7 @@
     <ClCompile Include="BeerBottle.cpp" />
     <ClCompile Include="BeerCan.cpp" />
     <ClCompile Include="Closet.cpp" />
+    <ClCompile Include="Cognac.cpp" />
     <ClCompile Include="CollisionDetector.cpp" />
     <ClCompile Include="detailed_cube.cpp" />
     <ClCompile Include="Drawer.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="BeerBottle.h" />
     <ClInclude Include="BeerCan.h" />
     <ClInclude Include="Closet.h" />
+    <ClInclude Include="Cognac.h" />
     <ClInclude Include="CollisionDetector.h" />
     <ClInclude Include="cube.h" />
     <ClInclude Include="detailed_cube.h" />

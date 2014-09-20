@@ -15,7 +15,7 @@ Drawer::Drawer(EventParameters *params)
 
 Drawer::~Drawer()
 {
-	delete this->objectsToDraw["wineBottle"]->modelMover;
+	delete this->objectsToDraw["cognac"]->modelMover;
 
 	for(auto it = this->collidableObjects.begin(); it!=this->collidableObjects.end(); ++it)
 	{
@@ -31,7 +31,7 @@ Drawer::~Drawer()
 void Drawer::AssignModelMover()
 {
 		auto mover = new ModelMover();
-		this->objectsToDraw["wineBottle"]->modelMover = mover;
+		this->objectsToDraw["cognac"]->modelMover = mover;
 		this->params->modelMover = mover;
 
 }
@@ -108,32 +108,27 @@ void Drawer::HandleCollisions()
 	Model *modelWithCollision;
 	CollisionStatus *status;
 	bool collisionDetected = false;
+	
 	for(auto i = this->collidableObjects.begin(); i != this->collidableObjects.end(); i++)
 	{
 																											// kat kolizji, promien
 		CollisionDetector::CheckForCollisions(i->first->modelMatrix, this->params->observer, this->params->center, 15, 3, i->second);
-		if(*(i->second) == CollisionStatus::detected)
+		if (*(i->second) == CollisionStatus::detected)
 		{
-			std::cout<<"Collision with object: " << i->first << " detected!" <<std::endl;
-			if (i->first->isDrinkable())
-			{
-				std::cout << "This looks tasty!" << std::endl;
-				std::cout << i->first->alcohol->volume << " ml, " << i->first->alcohol->power << "%." << std::endl;
-			}
-			else
-			{
-				std::cout << "You better not drink it." << std::endl;
-			}
 			modelWithCollision = i->first;
 			status = i->second;
 			collisionDetected = true;
+			modelWithCollision->isHandling = collisionDetected;
 			break;								//tylko jedna kolizja w danym momencie
 		}
+		else
+			i->first->isHandling = false;
 	}
 
 	if(collisionDetected && this->params->collisionAction == true)
 	{
 		this->params->collisionAction = false;
+		modelWithCollision->printInfo();
 		if(*(modelWithCollision->collisionStatus) != CollisionStatus::handling)
 		{
 			*status = CollisionStatus::handling;
