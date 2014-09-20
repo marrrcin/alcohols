@@ -103,6 +103,7 @@ public:
 
 	CollisionStatus *collisionStatus;
 	bool isHandling;
+	bool collisionDetected;
 
 	Alcohol *alcohol;
 	bool isDrinkable();

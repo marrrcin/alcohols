@@ -89,6 +89,12 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 		this->params->collisionAction = true;
 	}
 
+	//print info about alcohol
+	else if (c == 'n')
+	{
+		this->params->printInfo = true;
+	}
+
 	//obs³uga przesuwacza obiektów
 	else if (c == 'r')
 	{
@@ -144,11 +150,17 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	}
 	else if (c == 'i') //up
 	{
-		this->UpdateMover(10.0);
+		std::cout << "Increase by: " << std::endl;
+		float inc = 1.0;
+		std::cin >> inc;
+		this->UpdateMover(inc);
 	}
 	else if (c == 'k') //down
 	{
-		this->UpdateMover(-10.0);
+		std::cout << "Decrease by: " << std::endl;
+		float dec = 1.0;
+		std::cin >> dec;
+		this->UpdateMover(-dec);
 	}
 	else if (c == 'p')
 	{

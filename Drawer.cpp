@@ -8,7 +8,7 @@ Drawer::Drawer(EventParameters *params)
 	ModelFactory modelFactory;
 	modelFactory.CreateObjectsToDraw(&(this->objectsToDraw));
 	modelFactory.GetObjectsForCollisionsCheck(&(this->objectsToDraw), &(this->collidableObjects));
-	this->params=params;
+	this->params = params;
 	this->AssignModelMover();
 }
 
@@ -107,34 +107,45 @@ void Drawer::HandleCollisions()
 {
 	Model *modelWithCollision;
 	CollisionStatus *status;
-	bool collisionDetected = false;
-	
+	bool collision = false;;
+
 	for(auto i = this->collidableObjects.begin(); i != this->collidableObjects.end(); i++)
 	{
-																											// kat kolizji, promien
+																										// kat kolizji, promien
 		CollisionDetector::CheckForCollisions(i->first->modelMatrix, this->params->observer, this->params->center, 15, 3, i->second);
 		if (*(i->second) == CollisionStatus::detected)
 		{
 			modelWithCollision = i->first;
 			status = i->second;
-			collisionDetected = true;
-			modelWithCollision->isHandling = collisionDetected;
+			modelWithCollision->collisionDetected = true;
+			collision = true;
 			break;								//tylko jedna kolizja w danym momencie
 		}
 		else
-			i->first->isHandling = false;
+			i->first->collisionDetected = false;
+
 	}
 
-	if(collisionDetected && this->params->collisionAction == true)
+	if(collision)
 	{
-		this->params->collisionAction = false;
-		modelWithCollision->printInfo();
-		if(*(modelWithCollision->collisionStatus) != CollisionStatus::handling)
+
+		//printing info about alcohol
+		if (this->params->printInfo)
+			modelWithCollision->printInfo();
+
+		this->params->printInfo = false;
+
+		//changing collision status
+		if (this->params->collisionAction == true)
 		{
-			*status = CollisionStatus::handling;
-			modelWithCollision->collisionStatus = status;
+			std::cout << "Starting collision action! " << std::endl;
+			this->params->collisionAction = false;
+			if (*(modelWithCollision->collisionStatus) != CollisionStatus::handling)
+			{
+				*status = CollisionStatus::handling;
+				modelWithCollision->collisionStatus = status;
+			}
 		}
-			
 	}
 
 }

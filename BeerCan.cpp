@@ -34,7 +34,7 @@ void BeerCan::Draw()
 	glLoadMatrixf(glm::value_ptr(*V**M));
 	glEnable(GL_COLOR_MATERIAL);
 	glColor3f(1.0f, 1.0f, 1.0f);
-	if (*(this->collisionStatus) == CollisionStatus::detected || *(this->collisionStatus) == CollisionStatus::handling)
+	if (this->collisionDetected)
 		glColor3f(1.0f, 0.0f, 0.0f);
 	this->RenderObject();
 	glDisable(GL_COLOR_MATERIAL);

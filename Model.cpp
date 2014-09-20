@@ -10,7 +10,7 @@ Model::Model()
 	*(this->collisionStatus) = CollisionStatus::none;
 
 	this->isHandling=false;
-
+	this->collisionDetected = false;
 	this->alcohol = nullptr;
 }
 

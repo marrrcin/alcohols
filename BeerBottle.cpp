@@ -35,7 +35,7 @@ void BeerBottle::Draw()
 
 	glEnable(GL_COLOR_MATERIAL);
 	glColor3f(1.0f, 1.0f, 1.0f);
-	if (this->isHandling)
+	if (this->collisionDetected)
 		glColor3f(1.0f, 0.0f, 0.0f);
 	
 	this->RenderObject();

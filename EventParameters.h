@@ -19,6 +19,7 @@ public:
 	bool light3on;
 	bool crouch;
 	bool collisionAction;
+	bool printInfo;
 
 	ModelMover *modelMover;
 	Action currentAction;

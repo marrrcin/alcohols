@@ -30,7 +30,7 @@ void Mug::Draw()
 
 	glEnable(GL_COLOR_MATERIAL);
 	glColor3f(253.0 / 255, 1, 202.0 / 255);
-	if (*(this->collisionStatus) == CollisionStatus::detected || *(this->collisionStatus) == CollisionStatus::handling)
+	if (this->collisionDetected)
 		glColor3f(1.0f, 0.0f, 0.0f);
 	this->RenderObject();
 	glDisable(GL_COLOR_MATERIAL);
