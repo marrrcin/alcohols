@@ -1,0 +1,44 @@
+#version 330
+#define MAX_LIGHT_COUNT 3
+
+uniform mat4 P;
+uniform mat4 V;
+uniform mat4 M;
+uniform vec4 LIGHTS_POSITION[MAX_LIGHT_COUNT];
+uniform float LIGHTS_RADIUS[MAX_LIGHT_COUNT];
+uniform float LIGHTS_INTENSITY[MAX_LIGHT_COUNT];
+uniform float LIGHTS_COUNT;
+
+in vec4 vertex; //wspolrzedne wierzcholka w przestrzeni modelu
+in vec4 normal; //wektor normalny w wierzcholku
+in vec2 texCoords0; //wspolrzedne teksturowania
+
+out vec4 iV;
+out vec4 iN;
+out vec2 iTexCoords0;
+
+out vec4 iL[MAX_LIGHT_COUNT];
+out float lightsIntensity[MAX_LIGHT_COUNT];
+out float distRatio[MAX_LIGHT_COUNT];
+out float lightsCount;
+
+void main(void) 
+{
+	gl_Position=P*V*M*vertex;
+	iN=normalize(V*M*normal); //wektor normalny w przestrzeni oka
+	iV=normalize(vec4(0,0,0,1) - V * M * vertex); //wektor do obserwatora w przestrzeni oka
+	iTexCoords0=texCoords0;
+	lightsCount=LIGHTS_COUNT;
+	
+	for(int i=0; i<MAX_LIGHT_COUNT; i++)
+	{
+		if(i<LIGHTS_COUNT)
+		{
+			iL[i]=normalize(V*LIGHTS_POSITION[i]-V*M*vertex);//wektor do swiatla w przestrzeni oka
+			lightsIntensity[i] = LIGHTS_INTENSITY[i];
+			
+			vec4 vecLight = (P*V*LIGHTS_POSITION[i]-P*V*M*vertex);
+			distRatio[i] = max(0, 1-(sqrt(pow(vecLight.x,2) + pow(vecLight.y,2) + pow(vecLight.z,2))/LIGHTS_RADIUS[i]));
+		}
+	}
+}

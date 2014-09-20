@@ -3,6 +3,7 @@
 #include "ModelMover.h"
 #include "CollisionDetector.h"
 #include "Alcohol.h"
+#include "MyMaterial.h"
 
 typedef struct _Face
 {
@@ -49,7 +50,7 @@ protected:
 	std::vector <int> textIndex;
 	std::vector <int> normIndex;
 
-	Material material;
+	MyMaterial *material;
 	Lights lights;
 		
 	virtual void RenderObject();
@@ -59,6 +60,8 @@ public:
 	~Model();
 	virtual void Draw() = 0;
 	virtual void NextFrame() = 0;
+
+	void DrawModel(); // szejdery, tekstury i te sprawy
 
 	virtual void LoadDefaultPerspectiveMatrix();
 	virtual void LoadModelFromObjFile(std::string fileName);

@@ -17,6 +17,33 @@ Model::Model()
 
 Model::~Model()
 {
+
+}
+
+void Model::DrawModel()
+{
+	this->material->shader->use();
+
+	glUniformMatrix4fv(this->material->shader->getUniformLocation("P"), 1, false, glm::value_ptr(*this->perspectiveMatrix));
+	glUniformMatrix4fv(this->material->shader->getUniformLocation("V"), 1, false, glm::value_ptr(*this->viewMatrix));
+	glUniformMatrix4fv(this->material->shader->getUniformLocation("M"), 1, false, glm::value_ptr(*this->modelMatrix));
+	glUniform4fv(this->material->shader->getUniformLocation("LIGHTS_POSITION"), lights.getMaxLightCount(), lights.position);
+	glUniform1fv(this->material->shader->getUniformLocation("LIGHTS_RADIUS"), lights.getLightCount(), lights.radius);
+	glUniform1fv(this->material->shader->getUniformLocation("LIGHTS_INTENSITY"), lights.getLightCount(), lights.intensity);
+	glUniform1f(this->material->shader->getUniformLocation("LIGHTS_COUNT"), lights.getLightCount());
+
+	//ustawienie tekstur
+	glUniform1i(this->material->shader->getUniformLocation("textureMap0"), 0); //zmienna jednorodna textureMap0 reprezentuje jednostkê teksturuj¹c¹ numer 0
+	glUniform1i(this->material->shader->getUniformLocation("textureMap1"), 1); //zmienna jednorodna textureMap1 reprezentuje jednostkê teksturuj¹c¹ numer 1
+	glActiveTexture(GL_TEXTURE0); //Uaktywnij jednostkê teksturuj¹c¹ numer 0
+	glBindTexture(GL_TEXTURE_2D, this->material->diffuseMap); //Zwi¹¿ aktywn¹ jednostkê teksturuj¹c¹ z tekstur¹ o uchwycie zapisanym w tex0
+	glActiveTexture(GL_TEXTURE1); //Uaktywnij jednostkê teksturuj¹c¹ numer 1
+	glBindTexture(GL_TEXTURE_2D, this->material->specularMap); //Zwi¹¿ aktywn¹ jednostkê teksturuj¹c¹ z tekstur¹ o uchwycie zapisanym w tex1
+	glBindVertexArray(this->vao);
+
+	glDrawArrays(GL_TRIANGLES, 0, arrayModels[i]->vertexCount);
+
+	glBindVertexArray(0);
 }
 
 bool Model::isDrinkable()
