@@ -18,6 +18,9 @@ public:
 	void SetDrawer(Drawer *drawer);
 	void SetEventHandler(EventHandler *eventHandler);
 
+	void setupVAO();
+	void setupVBO();
+
 	void StartMainLoop();
 
 	static void DisplayFunction()

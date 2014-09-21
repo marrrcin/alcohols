@@ -38,16 +38,11 @@ private:
 
 
 protected:
-	std::vector<glm::vec3> vertices;
-	std::vector<glm::vec3> normals;
-	std::vector<glm::vec3> textures;
-
 	std::vector <int> vertIndex;
 	std::vector <int> textIndex;
 	std::vector <int> normIndex;
 
 	Light lights;
-	MyMaterial *material;
 		
 	virtual void RenderObject();
 
@@ -85,6 +80,9 @@ public:
 		file.close();
 	}
 
+	std::vector<glm::vec3> vertices;
+	std::vector<glm::vec3> normals;
+	std::vector<glm::vec3> textures;
 
 	glm::mat4 *viewMatrix;
 	glm::mat4 *perspectiveMatrix;
@@ -98,7 +96,6 @@ public:
 	GLuint bufIndices;
 
 	int vertexCount;
-	int materialIndex; 
 
 	CollisionStatus *collisionStatus;
 	bool isHandling;
@@ -107,6 +104,10 @@ public:
 	Alcohol *alcohol;
 	bool isDrinkable();
 	void Model::printInfo();
+
 	ModelMover *modelMover;
+
+	MyMaterial *material;
+
 };
 
