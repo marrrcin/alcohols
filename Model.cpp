@@ -67,7 +67,10 @@ void Model::printInfo()
 {
 	if (this->isDrinkable())
 	{
-		std::cout << "Excellent choice! " << this->alcohol->volume << "ml, " << this->alcohol->power << "% of alcohol." << std::endl;
+		if (this->alcohol->volume > 0)
+			std::cout << "Excellent choice! " << this->alcohol->volume << "ml, " << this->alcohol->power << "% of alcohol." << std::endl;
+		else
+			std::cout << "This is empty. Try other ones!" << std::endl;
 	}
 }
 

@@ -33,5 +33,5 @@ void Player::drinkAlcohol(Alcohol *alcohol)
 void Player::updateIntoxicationLevel(int alcoholVomume)
 {
 	this->intoxicationLevel += alcoholVomume;
-	std::cout << "Alcohol level: " << this->intoxicationLevel << "/100 " << std::endl;
+	std::cout << "Alcohol level: " << this->intoxicationLevel << std::endl;
 }

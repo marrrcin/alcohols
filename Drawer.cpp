@@ -24,7 +24,7 @@ Drawer::Drawer(EventParameters *params)
 
 Drawer::~Drawer()
 {
-	delete this->objectsToDraw["vodka"]->modelMover;
+	delete this->objectsToDraw["champagne"]->modelMover;
 
 	for(auto it = this->collidableObjects.begin(); it!=this->collidableObjects.end(); ++it)
 	{
@@ -41,7 +41,7 @@ Drawer::~Drawer()
 void Drawer::AssignModelMover()
 {
 		auto mover = new ModelMover();
-		this->objectsToDraw["vodka"]->modelMover = mover;
+		this->objectsToDraw["champagne"]->modelMover = mover;
 		this->params->modelMover = mover;
 
 }

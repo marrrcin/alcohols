@@ -1,23 +1,22 @@
-#include "Vodka.h"
+#include "Champagne.h"
 
-
-Vodka::Vodka()
+Champagne::Champagne()
 {
-	//this->LoadModelFromObjFile("absolut.obj");
-	//this->ExportLoadedMatrixesToFile("vodka");
-	this->QuickLoadFromFiles("vodka");
+	//this->LoadModelFromObjFile("champagne.obj");
+	//this->ExportLoadedMatrixesToFile("champagne");
+	this->QuickLoadFromFiles("champagne");
 	this->flattenData();
 
-	this->alcohol = new Alcohol(700, 40);
+	this->alcohol = new Alcohol(700, 10);
 }
 
 
-Vodka::~Vodka()
+Champagne::~Champagne()
 {
 	delete this->modelMatrix;
 }
 
-void Vodka::Draw()
+void Champagne::Draw()
 {
 
 	this->LoadDefaultPerspectiveMatrix();
@@ -27,27 +26,26 @@ void Vodka::Draw()
 	this->modelMatrix = M;
 	*M = glm::scale(*M, glm::vec3(0.05f));
 	*M = glm::scale(*M, glm::vec3(0.15f));
-	*M = glm::scale(*M, glm::vec3(1.3f));
-	*M = glm::translate(*M, glm::vec3(-1000.0f, 450.0f, -200.0f));
-	/*
+
+	
 	if (this->modelMover->isEnabled)
 	{
-		*M = this->modelMover->Scale(*M);
-		*M = this->modelMover->Rotate(*M);
-		*M = this->modelMover->Translate(*M);
+	*M = this->modelMover->Scale(*M);
+	*M = this->modelMover->Rotate(*M);
+	*M = this->modelMover->Translate(*M);
 	}
-	*/
+	
 	glMatrixMode(GL_MODELVIEW);
 	glLoadMatrixf(glm::value_ptr(*V**M));
 	glEnable(GL_COLOR_MATERIAL);
-	glColor3f(0.0f, 0.7f, 0.1f);
+	glColor3f(0.0f, 1.0f, 0.0f);
 	if (this->collisionDetected)
 		glColor3f(1.0f, 0.0f, 0.0f);
 	this->RenderObject();
 	glDisable(GL_COLOR_MATERIAL);
 }
 
-void Vodka::NextFrame()
+void Champagne::NextFrame()
 {
 
 }
