@@ -20,6 +20,8 @@ EventParameters::EventParameters(void)
 	this->ax = 0;
 	this->ay = 0;
 	this->az = 0;
+
+	this->player = new Player();
 }
 
 

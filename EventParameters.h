@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "ModelMover.h"
+#include "Player.h"
 
 class EventParameters
 {
@@ -25,5 +26,7 @@ public:
 	Action currentAction;
 	ActionAxis actionAxis;
 	float ax, ay, az;
+
+	Player *player;
 };
 

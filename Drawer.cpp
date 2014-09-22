@@ -18,7 +18,6 @@ Drawer::Drawer(EventParameters *params)
 	this->AssignModelMover();
 
 	std::cout << "\t> Creating new player..." << std::endl;
-	this->player = new Player();
 }
 
 
@@ -119,6 +118,16 @@ void Drawer::HandleCollisions()
 	CollisionStatus *status;
 	bool collision = false;;
 
+	//resetuj zawartosc butelek
+	if (this->params->player->sobered)
+	{
+		this->params->player->sobered = false;
+		for (auto i = this->collidableObjects.begin(); i != this->collidableObjects.end(); i++)
+		{
+			i->first->alcohol->reset();
+		}
+	}
+
 	for(auto i = this->collidableObjects.begin(); i != this->collidableObjects.end(); i++)
 	{
 																										// kat kolizji, promien
@@ -149,7 +158,7 @@ void Drawer::HandleCollisions()
 		if (this->params->collisionAction == true)
 		{
 
-			this->player->drinkAlcohol(modelWithCollision->alcohol);
+			this->params->player->drinkAlcohol(modelWithCollision->alcohol);
 
 			this->params->collisionAction = false;
 			/*

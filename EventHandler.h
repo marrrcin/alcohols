@@ -1,5 +1,8 @@
 #pragma once
 #include "EventParameters.h"
+#include <math.h>
+#include <time.h>
+
 class EventHandler
 {
 private:
@@ -33,6 +36,7 @@ public:
 	
 	void MouseMove(int x,int y);
 
+	void SoberUp();
 	EventParameters *params;
 };
 

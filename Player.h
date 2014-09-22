@@ -11,5 +11,7 @@ public:
 	int intoxicationLevel; // 0-100;
 	void drinkAlcohol(Alcohol *alcohol);
 	void updateIntoxicationLevel(int alcoholVolume);
+	void soberUp();
+	bool sobered; // do resetowania wszystkich butelek
 };
 

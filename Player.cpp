@@ -4,6 +4,7 @@
 Player::Player()
 {
 	this->intoxicationLevel = 0;
+	this->sobered = false;
 }
 
 
@@ -35,4 +36,10 @@ void Player::updateIntoxicationLevel(int alcoholVomume)
 	this->intoxicationLevel += alcoholVomume;
 	if(alcoholVomume != 0)
 		std::cout << "Alcohol level: " << this->intoxicationLevel << std::endl;
+}
+
+void Player::soberUp()
+{
+	this->intoxicationLevel = 0;
+	this->sobered = true;
 }

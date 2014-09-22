@@ -33,12 +33,34 @@ bool EventHandler::CanMoveTo(glm::vec3 newPosition)
 	return true;
 }
 
+void EventHandler::SoberUp()
+{
+	this->cameraSpeed = 0.4f;
+	this->cameraYrange = 10.0f;
+	this->mouseSpeed = 0.1f;
+	this->params->player->soberUp();
+}
+
 void EventHandler::KeyDown(unsigned char c, int x, int y)
 {
 	glm::vec3 center = this->params->center;
 	glm::vec3 observer = this->params->observer;
 	glm::vec3 nose = this->params->nose;
 	
+	// utrudnione poruszanie do przodu
+	if (c == 'w')
+	{
+		//srand(time(NULL));
+		int randInt = rand() % 200;
+		char tab[] = { 'w', 'a', 'd' };
+		if (randInt < this->params->player->intoxicationLevel)
+		{
+			int randIndex = rand() % 3;
+			c = tab[randIndex];
+		}
+
+	}
+
 	// move forward
 	if(c=='w')
 	{
@@ -90,12 +112,25 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	else if(c==' ')
 	{
 		this->params->collisionAction = true;
+		if(this->cameraSpeed > 0.2)
+			this->cameraSpeed = 0.4 - (this->params->player->intoxicationLevel / 1000.0);
+		if (this->cameraYrange > 5.0)
+			this->cameraYrange = 10.0 - (this->params->player->intoxicationLevel / 40.0);
+		if (this->mouseSpeed > 0.05)
+			this->mouseSpeed = 0.1 - (this->params->player->intoxicationLevel / 4000.0);
 	}
 
 	//print info about alcohol
 	else if (c == 'n')
 	{
 		this->params->printInfo = true;
+	}
+
+	//sober up + reset butelek
+	else if (c == 'q')
+	{
+		this->SoberUp();
+		std::cout << "Sobered up! Now you can drink some more..." << std::endl;
 	}
 
 	//obs³uga przesuwacza obiektów
