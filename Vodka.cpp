@@ -40,7 +40,7 @@ void Vodka::Draw()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadMatrixf(glm::value_ptr(*V**M));
 	glEnable(GL_COLOR_MATERIAL);
-	glColor3f(0.3f, 0.7f, 0.3f);
+	glColor3f(0.0f, 0.7f, 0.1f);
 	if (this->collisionDetected)
 		glColor3f(1.0f, 0.0f, 0.0f);
 	this->RenderObject();

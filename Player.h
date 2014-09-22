@@ -1,7 +1,7 @@
 #pragma once
 #include "Alcohol.h"
 #include "stdafx.h"
-#include "alcohols.h"
+
 
 class Player
 {

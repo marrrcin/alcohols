@@ -126,6 +126,7 @@
     <ClCompile Include="MyMaterial.cpp" />
     <ClCompile Include="MyShader.cpp" />
     <ClCompile Include="OpenGLInitializer.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="RoomModel.cpp" />
     <ClCompile Include="Shelves.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="MyMaterial.h" />
     <ClInclude Include="MyShader.h" />
     <ClInclude Include="OpenGLInitializer.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="RoomModel.h" />
     <ClInclude Include="Shelves.h" />
     <ClInclude Include="stdafx.h" />

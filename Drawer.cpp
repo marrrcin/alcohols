@@ -17,6 +17,8 @@ Drawer::Drawer(EventParameters *params)
 	std::cout << "\t> Assigning model mover..." << std::endl;
 	this->AssignModelMover();
 
+	std::cout << "\t> Creating new player..." << std::endl;
+	this->player = new Player();
 }
 
 
@@ -147,12 +149,17 @@ void Drawer::HandleCollisions()
 		if (this->params->collisionAction == true)
 		{
 			std::cout << "Starting collision action! " << std::endl;
+
+			this->player->drinkAlcohol(modelWithCollision->alcohol);
+
 			this->params->collisionAction = false;
+			/*
 			if (*(modelWithCollision->collisionStatus) != CollisionStatus::handling)
 			{
 				*status = CollisionStatus::handling;
 				modelWithCollision->collisionStatus = status;
 			}
+			*/
 		}
 	}
 

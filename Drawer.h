@@ -2,6 +2,7 @@
 #include "Model.h"
 #include "EventParameters.h"
 #include "CollisionDetector.h"
+#include "Player.h"
 
 class Drawer
 {
@@ -23,5 +24,6 @@ public:
 	std::map<Model*, CollisionStatus*> collidableObjects;
 
 	EventParameters *params;
+	Player *player;
 };
 
