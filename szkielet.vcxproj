@@ -131,6 +131,7 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="tga.cpp" />
+    <ClCompile Include="Vodka.cpp" />
     <ClCompile Include="WineBottle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="tga.h" />
+    <ClInclude Include="Vodka.h" />
     <ClInclude Include="WineBottle.h" />
   </ItemGroup>
   <ItemGroup>

@@ -17,6 +17,7 @@
 #include "WineBottle.h"
 #include "CollisionDetector.h"
 #include "Cognac.h"
+#include "Vodka.h"
 
 class ModelFactory
 {

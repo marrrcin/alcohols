@@ -40,6 +40,9 @@ void ModelFactory::CreateObjectsToDraw(std::map<std::string, Model*> *objects)
 
 	std::cout << "\t\t> Creating: cognac..." << std::endl;
 	(*objects)["cognac"] = new Cognac();
+
+	std::cout << "\t\t> Creating: vodka..." << std::endl;
+	(*objects)["vodka"] = new Vodka();
 }
 
 CollisionStatus* ModelFactory::GetNoCollisionStatus()
@@ -71,6 +74,10 @@ void ModelFactory::GetObjectsForCollisionsCheck(std::map<std::string,Model*> *ob
 		(*collidableObjects)[object] = status;
 
 		object = (*objects)["cognac"];
+		status = GetNoCollisionStatus();
+		(*collidableObjects)[object] = status;
+
+		object = (*objects)["vodka"];
 		status = GetNoCollisionStatus();
 		(*collidableObjects)[object] = status;
 

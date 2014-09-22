@@ -99,6 +99,9 @@
     <ClCompile Include="Lights.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Vodka.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cube.h">
@@ -186,6 +189,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="alcohols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vodka.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
