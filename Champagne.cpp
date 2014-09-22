@@ -26,7 +26,8 @@ void Champagne::Draw()
 	this->modelMatrix = M;
 	*M = glm::scale(*M, glm::vec3(0.05f));
 	*M = glm::scale(*M, glm::vec3(0.15f));
-
+	*M = glm::scale(*M, glm::vec3(0.9f));
+	*M = glm::translate(*M, glm::vec3(-1000.0f, 630.0f, -250.0f));
 	
 	if (this->modelMover->isEnabled)
 	{

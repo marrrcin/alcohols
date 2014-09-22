@@ -148,7 +148,6 @@ void Drawer::HandleCollisions()
 		//changing collision status
 		if (this->params->collisionAction == true)
 		{
-			std::cout << "Starting collision action! " << std::endl;
 
 			this->player->drinkAlcohol(modelWithCollision->alcohol);
 
