@@ -4,6 +4,7 @@
 Mug::Mug()
 {
 	this->QuickLoadFromFiles("mug");
+	this->flattenData();
 
 	this->alcohol = new Alcohol(750, 7);
 }

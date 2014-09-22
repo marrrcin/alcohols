@@ -59,24 +59,35 @@ void OpenGLInitializer::SetEventHandler(EventHandler *eventHandler)
 //Procedura tworz¹ca bufory VBO zawieraj¹ce dane z tablic opisuj¹cych rysowany obiekt.
 void OpenGLInitializer::setupVBO()
 {
-	std::cout << "\t\t>Setting up VBO for " << this->drawer->objectsToDraw.size() << " objects! " << std::endl;
+	std::cout << "\t>Setting up VBO for " << this->drawer->objectsToDraw.size() << " objects! " << std::endl;
 
 	for (auto it = this->drawer->objectsToDraw.begin(); it != this->drawer->objectsToDraw.end(); ++it)
 	{
-		// Vertices
-		glGenBuffers(1, &(it->second->bufVertices));
-		glBindBuffer(GL_ARRAY_BUFFER, it->second->bufVertices);
-		glBufferData(GL_ARRAY_BUFFER, it->second->vertices.size() * sizeof(float) * 4, it->second->flat->vert, GL_STATIC_DRAW); 
+		std::cout << "\t\t" << it->first << std::endl;
 
-		// Normals
-		glGenBuffers(1, &(it->second->bufNormals));
-		glBindBuffer(GL_ARRAY_BUFFER, it->second->bufNormals);
-		glBufferData(GL_ARRAY_BUFFER, it->second->normals.size() * sizeof(float) * 4, it->second->flat->norm, GL_STATIC_DRAW); 
+		//te obiekty bêd¹ renderowane poprzez odpowiednie metody w swoich klasach
+		if (it->first == "barrel" || it-> first == "closet")
+			continue;
 
-		// Textures
-		glGenBuffers(1, &(it->second->bufTextureCoords));
-		glBindBuffer(GL_ARRAY_BUFFER, it->second->bufTextureCoords);
-		glBufferData(GL_ARRAY_BUFFER, it->second->textures.size() * sizeof(float) * 2, it->second->flat->tex, GL_STATIC_DRAW); 
+
+		//quick fix, bo na razie tylko cognac ma materia³ i szejdera
+		if (it->first == "cognac")
+		{
+			// Vertices
+			glGenBuffers(1, &(it->second->bufVertices));
+			glBindBuffer(GL_ARRAY_BUFFER, it->second->bufVertices);
+			glBufferData(GL_ARRAY_BUFFER, it->second->vertices.size() * sizeof(float) * 4, it->second->flat->vert, GL_STATIC_DRAW);
+
+			// Normals
+			glGenBuffers(1, &(it->second->bufNormals));
+			glBindBuffer(GL_ARRAY_BUFFER, it->second->bufNormals);
+			glBufferData(GL_ARRAY_BUFFER, it->second->normals.size() * sizeof(float) * 4, it->second->flat->norm, GL_STATIC_DRAW);
+
+			// Textures
+			glGenBuffers(1, &(it->second->bufTextureCoords));
+			glBindBuffer(GL_ARRAY_BUFFER, it->second->bufTextureCoords);
+			glBufferData(GL_ARRAY_BUFFER, it->second->textures.size() * sizeof(float) * 2, it->second->flat->tex, GL_STATIC_DRAW);
+		} 
 	}
 }
 
@@ -85,32 +96,40 @@ void OpenGLInitializer::setupVAO()
 {
 	for (auto it = this->drawer->objectsToDraw.begin(); it != this->drawer->objectsToDraw.end(); ++it)
 	{
-		GLuint locVertex, locNormal, locTexCoords;
+		//te obiekty bêd¹ renderowane poprzez odpowiednie metody w swoich klasach
+		if (it->first == "barrel" || it->first == "closet")
+			continue;
 
-		// get slot numbers
-		locVertex = it->second->material->shader->getAttribLocation("vertex");
-		locNormal = it->second->material->shader->getAttribLocation("normal");
-		locTexCoords = it->second->material->shader->getAttribLocation("texCoords0");
+		//quick fix, bo na razie tylko cognac ma materia³ i szejdera
+		if (it->first == "cognac")
+		{
+			GLuint locVertex, locNormal, locTexCoords;
 
-		glGenVertexArrays(1, &(it->second->vao));
-		glBindVertexArray(it->second->vao);
+			// get slot numbers
+			locVertex = it->second->material->shader->getAttribLocation("vertex");
+			locNormal = it->second->material->shader->getAttribLocation("normal");
+			locTexCoords = it->second->material->shader->getAttribLocation("texCoords0");
 
-		// Vertices
-		glBindBuffer(GL_ARRAY_BUFFER, it->second->bufVertices);  
-		glEnableVertexAttribArray(locVertex); 
-		glVertexAttribPointer(locVertex, 4, GL_FLOAT, GL_FALSE, 0, NULL); 
+			glGenVertexArrays(1, &(it->second->vao));
+			glBindVertexArray(it->second->vao);
 
-		// Normals
-		glBindBuffer(GL_ARRAY_BUFFER, it->second->bufNormals);  
-		glEnableVertexAttribArray(locNormal); 
-		glVertexAttribPointer(locNormal, 4, GL_FLOAT, GL_FALSE, 0, NULL); 
+			// Vertices
+			glBindBuffer(GL_ARRAY_BUFFER, it->second->bufVertices);
+			glEnableVertexAttribArray(locVertex);
+			glVertexAttribPointer(locVertex, 4, GL_FLOAT, GL_FALSE, 0, NULL);
 
-		// Textures
-		glBindBuffer(GL_ARRAY_BUFFER, it->second->bufTextureCoords);  
-		glEnableVertexAttribArray(locTexCoords); 
-		glVertexAttribPointer(locTexCoords, 2, GL_FLOAT, GL_FALSE, 0, NULL); 
+			// Normals
+			glBindBuffer(GL_ARRAY_BUFFER, it->second->bufNormals);
+			glEnableVertexAttribArray(locNormal);
+			glVertexAttribPointer(locNormal, 4, GL_FLOAT, GL_FALSE, 0, NULL);
 
-		glBindVertexArray(0);
+			// Textures
+			glBindBuffer(GL_ARRAY_BUFFER, it->second->bufTextureCoords);
+			glEnableVertexAttribArray(locTexCoords);
+			glVertexAttribPointer(locTexCoords, 2, GL_FLOAT, GL_FALSE, 0, NULL);
+
+			glBindVertexArray(0);
+		}
 	}
 }
 

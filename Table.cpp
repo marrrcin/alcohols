@@ -4,6 +4,7 @@
 Table::Table()
 {
 	this->QuickLoadFromFiles("table");
+	this->flattenData();
 }
 
 

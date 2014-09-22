@@ -4,8 +4,7 @@
 
 RoomModel::RoomModel(void)
 {
-	this->LoadModelFromObjFile("roomv3.obj");
-	std::cout << "\t\t > Room loaded from file!" << std::endl;
+	this->QuickLoadFromFiles("room");
 
 	this->flattenData();
 

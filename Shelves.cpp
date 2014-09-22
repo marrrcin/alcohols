@@ -3,7 +3,8 @@
 
 Shelves::Shelves(void)
 {
-	this->LoadModelFromObjFile("shelves.obj");
+	this->QuickLoadFromFiles("shelves");
+	this->flattenData();
 }
 
 

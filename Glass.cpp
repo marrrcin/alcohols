@@ -14,7 +14,8 @@ Ekstra!
 */
 Glass::Glass()
 {
-	this->LoadModelFromObjFile("glass.obj");
+	this->QuickLoadFromFiles("glass");
+	this->flattenData();
 }
 
 

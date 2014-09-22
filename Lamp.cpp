@@ -3,10 +3,11 @@
 
 Lamp::Lamp(void)
 {
-	this->LoadModelFromObjFile("lamp.obj");
+	this->QuickLoadFromFiles("lamp");
 	this->lastTime = 0;
 	this->speed = 110;
 	this->currentAngle = 0;
+	this->flattenData();
 }
 
 

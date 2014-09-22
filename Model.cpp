@@ -285,13 +285,13 @@ void Model::LoadDefaultPerspectiveMatrix()
 
 void Model::flattenData()
 {
-	std::cout << "\t\t> (Flatenning data...)" << std::endl;
 	FlatData *fd = new FlatData();
 	this->flat = fd;
-	//tablica wierzcholkow
+
 	std::cout << "\t\t> (" << this->vertexCount << " vertices...)" << std::endl;
 
-	fd->vertCount = this->vertexCount;
+	//tablica wierzcholkow
+	fd->vertCount = this->vertices.size();
 	fd->vert = new float[fd->vertCount * 4]; // x, y, z, w
 	fd->norm = new float[fd->vertCount * 4]; // x, y, z, w
 	fd->tex = new float[fd->vertCount * 2]; // x, y

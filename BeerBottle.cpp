@@ -4,7 +4,7 @@ BeerBottle::BeerBottle()
 {
 
 	this->QuickLoadFromFiles("beer");
-
+	this->flattenData();
 	this->lastTime = 0;
 	this->rotationAngle = 0;
 	this->rotationSpeed = 140;
