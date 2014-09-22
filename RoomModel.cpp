@@ -57,8 +57,8 @@ void RoomModel::Draw()
 	glEnable(GL_COLOR_MATERIAL);
 	glColor3f(1.0f,1.0f,1.0f);
 
-	//glLightfv(GL_LIGHT3,GL_POSITION,this->lights.position);
-	//glLightfv(GL_LIGHT3,GL_DIFFUSE,this->lights.diffuse);
+	glLightfv(GL_LIGHT3,GL_POSITION,this->lights.position);
+	glLightfv(GL_LIGHT3,GL_DIFFUSE,this->lights.diffuse);
 
 	this->RenderObject();
 	

@@ -45,7 +45,7 @@ void Cognac::Draw()
 	glColor3f(0.0f, 0.2f, 0.7f);
 	if (this->collisionDetected)
 		glColor3f(1.0f, 0.0f, 0.0f);
-	//this->RenderObject();
+	this->DrawModel();
 	glDisable(GL_COLOR_MATERIAL);
 }
 

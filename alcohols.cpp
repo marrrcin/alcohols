@@ -19,7 +19,7 @@ int _tmain(int argc, char* argv[])
 	//lights
 	std::cout << "> Initializing lights..." << std::endl;
 	globalLights = new Lights();
-	globalLights->addLight(6.11f, 5.0f, -4.92f, 1.0f, 1.0f, 1.0f, 40.0f, 1.0f);
+	globalLights->addLight(6.11f, 5.0f, -4.92f, 1.0f, 1.0f, 1.0f, 0.01f, 0.2f);
 
 	std::cout << "> Initializing Event Handler..." << std::endl;
 	EventHandler *eventHandler = new EventHandler();

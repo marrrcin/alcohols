@@ -6,7 +6,6 @@
 
 Model::Model()
 {
-	std::cout << "\t\t> (Creating model...)" << std::endl;
 	this->collisionStatus = new CollisionStatus();
 	*(this->collisionStatus) = CollisionStatus::none;
 
@@ -76,7 +75,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 {
 	std::string folderName = "obj/";
 	fileName = folderName.append(fileName);
-	std::cout << "\t\t\t> Opening file: " << fileName << std::endl;
+	std::cout << "\t\t> Opening file: " << fileName << std::endl;
 
 	std::ifstream file(fileName.c_str(), std::ios::in);
 	std::string buffer;
@@ -287,7 +286,7 @@ void Model::flattenData()
 {
 	FlatData *fd = new FlatData();
 	this->flat = fd;
-
+	this->vertexCount = this->vertices.size();
 	std::cout << "\t\t> (" << this->vertexCount << " vertices...)" << std::endl;
 
 	//tablica wierzcholkow
