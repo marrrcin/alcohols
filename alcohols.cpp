@@ -38,12 +38,12 @@ int _tmain(int argc, char* argv[])
 	openGL.SetDrawer(drawer);
 
 	// set up VBOs
-	std::cout << "> Initializing VBOs..." << std::endl;
-	openGL.setupVBO();
+	//std::cout << "> Initializing VBOs..." << std::endl;
+	//openGL.setupVBO();
 
 	//set up the VAO for a mesh
-	std::cout << "> Initializing VAO..." << std::endl;
-	openGL.setupVAO();
+	//std::cout << "> Initializing VAO..." << std::endl;
+	//openGL.setupVAO();
 
 	//glut main loop
 	std::cout << "> All done! Starting glut main loop!" << std::endl;
