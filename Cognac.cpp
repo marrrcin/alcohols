@@ -3,9 +3,11 @@
 
 Cognac::Cognac()
 {
+	this->hasTextures = true;
 	this->LoadModelFromObjFile("cognac.obj");
 	this->ExportLoadedMatrixesToFile("cognac");
 	this->alcohol = new Alcohol(700, 40);
+
 	this->material = new MyMaterial("materials/cognac/");
 }
 

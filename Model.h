@@ -17,7 +17,7 @@ typedef struct _Face
 	int z;
 } Face;
 
-
+// this will be removed?
 typedef struct _Light
 {
 	float ambient[4];
@@ -28,6 +28,16 @@ typedef struct _Light
 	float spotlightAt[4];
 } Light;
 
+// flat representation of vertces for vao and vbo
+typedef struct _flatData
+{
+	int vertCount;
+
+	float *vert;
+	float *tex;
+	float *norm;
+
+} FlatData;
 
 class Model
 {
@@ -38,10 +48,6 @@ private:
 
 
 protected:
-	std::vector <int> vertIndex;
-	std::vector <int> textIndex;
-	std::vector <int> normIndex;
-
 	Light lights;
 		
 	virtual void RenderObject();
@@ -81,15 +87,20 @@ public:
 	}
 
 	std::vector<glm::vec3> vertices;
-	std::vector<glm::vec3> normals;
 	std::vector<glm::vec3> textures;
-
+	std::vector<glm::vec3> normals;
+	
 	glm::mat4 *viewMatrix;
 	glm::mat4 *perspectiveMatrix;
 	glm::mat4 *modelMatrix;
 
-	GLuint vao; // uchwyt na vao
-	//uchwyty na vbo
+	//vectors for vao and vbo
+	FlatData *flat;
+	//initialize flat vectors (for vbo binding)
+	void flattenData();
+
+	GLuint vao; // vao handler
+	//vbo handlers
 	GLuint bufVertices;  
 	GLuint bufTextureCoords;
 	GLuint bufNormals; 
@@ -104,6 +115,7 @@ public:
 	Alcohol *alcohol;
 	bool isDrinkable();
 	void Model::printInfo();
+	bool hasTextures;
 
 	ModelMover *modelMover;
 

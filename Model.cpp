@@ -6,18 +6,20 @@
 
 Model::Model()
 {
+	std::cout << "\t\t> (Creating model...)" << std::endl;
 	this->collisionStatus = new CollisionStatus();
 	*(this->collisionStatus) = CollisionStatus::none;
 
 	this->isHandling=false;
 	this->collisionDetected = false;
 	this->alcohol = nullptr;
+	this->hasTextures = false; // wa¿ne: w konstruktorach poszczegolnych modeli zmienic na true, jesli rzeczywiscie maja tekstury!
 }
 
 
 Model::~Model()
 {
-
+	delete this->flat;
 }
 
 void Model::DrawModel()
@@ -36,12 +38,17 @@ void Model::DrawModel()
 
 
 	//ustawienie tekstur
-	glUniform1i(this->material->shader->getUniformLocation("textureMap0"), 0); //zmienna jednorodna textureMap0 reprezentuje jednostkê teksturuj¹c¹ numer 0
-	glUniform1i(this->material->shader->getUniformLocation("textureMap1"), 1); //zmienna jednorodna textureMap1 reprezentuje jednostkê teksturuj¹c¹ numer 1
-	glActiveTexture(GL_TEXTURE0); //Uaktywnij jednostkê teksturuj¹c¹ numer 0
-	glBindTexture(GL_TEXTURE_2D, this->material->diffuseMap); //Zwi¹¿ aktywn¹ jednostkê teksturuj¹c¹ z tekstur¹ o uchwycie zapisanym w tex0
-	glActiveTexture(GL_TEXTURE1); //Uaktywnij jednostkê teksturuj¹c¹ numer 1
-	glBindTexture(GL_TEXTURE_2D, this->material->specularMap); //Zwi¹¿ aktywn¹ jednostkê teksturuj¹c¹ z tekstur¹ o uchwycie zapisanym w tex1
+
+	// uniformy do jednostek teksturuj¹cych
+	glUniform1i(this->material->shader->getUniformLocation("textureMap0"), 0); 
+	glUniform1i(this->material->shader->getUniformLocation("textureMap1"), 1);
+
+	glActiveTexture(GL_TEXTURE0); 
+	glBindTexture(GL_TEXTURE_2D, this->material->diffuseMap); 
+
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, this->material->specularMap); 
+
 	glBindVertexArray(this->vao);
 
 	glDrawArrays(GL_TRIANGLES, 0, this->vertexCount);
@@ -69,6 +76,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 {
 	std::string folderName = "obj/";
 	fileName = folderName.append(fileName);
+	std::cout << "\t\t\t> Opening file: " << fileName << std::endl;
 
 	std::ifstream file(fileName.c_str(), std::ios::in);
 	std::string buffer;
@@ -76,7 +84,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 	std::string helper;
 	int t, q;
 	int face[3];
-	bool hasTextures = false;
+	
 	std::istringstream stringStream, helperStream;
 	std::vector<glm::vec3> verticesBuffer;
 	std::vector<glm::vec3> normalsBuffer;
@@ -106,9 +114,13 @@ void Model::LoadModelFromObjFile(std::string fileName)
 			stringStream >> vertex.y;
 			stringStream >> vertex.z;
 			if (firstChar == "v ")
+			{
 				verticesBuffer.push_back(vertex);
+			}
 			else
+			{
 				normalsBuffer.push_back(vertex);
+			}
 		}
 		else if (firstChar == "vt")
 		{
@@ -117,7 +129,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 			stringStream >> texture.y;
 			stringStream >> texture.z;
 			texturesBuffer.push_back(texture);
-			hasTextures = true;
+			this->hasTextures = true;
 		}
 		//still not sure if this one works properly
 		//will look closely into that soon 
@@ -142,7 +154,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 				this->vertices.push_back(verticesBuffer[face[0]]);
 				this->normals.push_back(normalsBuffer[face[2]]);
 
-				if (hasTextures)
+				if (this->hasTextures)
 					this->textures.push_back(texturesBuffer[face[1]]);
 
 			}
@@ -150,6 +162,7 @@ void Model::LoadModelFromObjFile(std::string fileName)
 		}
 
 	} while (!file.eof()); 
+	this->vertexCount = this->vertices.size();
 
 }
 
@@ -199,13 +212,13 @@ void Model::LoadMaterialFromMtlFile(std::string fileName)
 void Model::ExportLoadedMatrixesToFile(std::string fileName)
 {
 	std::fstream file;
-	std::string fileName2;
+	std::string vert, norm, text;
 	unsigned i;
 	std::string folderName = "quickLoad/";
 
-	fileName2 = folderName.append(fileName);
-	fileName2.append("Vertices.txt");
-		file.open(fileName2.c_str(), std::fstream::out);
+	vert = norm = text = folderName.append(fileName);
+	vert.append("Vertices.txt");
+		file.open(vert.c_str(), std::fstream::out);
 	file << this->vertices.size() << std::endl;
 	for (i = 0; i < this->vertices.size(); i++)
 	{
@@ -213,9 +226,8 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 	}
 	file.close();
 
-	fileName2 = folderName.append(fileName);
-	fileName2.append("Normals.txt");
-	file.open(fileName2.c_str(), std::fstream::out);
+	norm.append("Normals.txt");
+	file.open(norm.c_str(), std::fstream::out);
 	file << this->normals.size() << std::endl;
 	for (i = 0; i < this->normals.size(); i++)
 	{
@@ -223,17 +235,18 @@ void Model::ExportLoadedMatrixesToFile(std::string fileName)
 	}
 	file.close();
 
-	/* we should probably use these later
-	fileName2 = folderName.append(fileName);
-	fileName2.append("Textures.txt");
-	file.open(fileName2.c_str(), std::fstream::out);
-	file << this->textures.size() << std::endl;
-	for (i = 0; i < this->textures.size(); i++)
+	if (this->hasTextures)
 	{
-		file << this->textures[i].x << " " << this->textures[i].y << " " << this->textures[i].z << std::endl;
+		text.append("Textures.txt");
+		file.open(text.c_str(), std::fstream::out);
+		file << this->textures.size() << std::endl;
+		for (i = 0; i < this->textures.size(); i++)
+		{
+			file << this->textures[i].x << " " << this->textures[i].y << " " << this->textures[i].z << std::endl;
+		}
+		file.close();
 	}
-	file.close();
-	*/
+
 }
 
 void Model::QuickLoadFromFiles(std::string baseFileName)
@@ -248,15 +261,18 @@ void Model::QuickLoadFromFiles(std::string baseFileName)
 	fileName = baseFileName;
 	fileName.append("Normals.txt");
 	std::thread t2(Model::LoadVectorFromFile, fileName, &this->normals);
-	/*
-	fileName = baseFileName;
-	fileName.append("Textures.txt");
-	std::thread t3(Model::LoadVectorFromFile, fileName, &this->textures);
-	*/
+	
+	if (this->hasTextures)
+	{
+		fileName = baseFileName;
+		fileName.append("Textures.txt");
+		std::thread t3(Model::LoadVectorFromFile, fileName, &this->textures);
+		t3.join(); // not sure if this is going to work
+	}
 
 	t1.join();
 	t2.join();
-	//t3.join();
+
 }
 
 void Model::LoadDefaultPerspectiveMatrix()
@@ -265,4 +281,38 @@ void Model::LoadDefaultPerspectiveMatrix()
 	glMatrixMode(GL_PROJECTION);
 	glLoadMatrixf(glm::value_ptr(*P));
 	glMatrixMode(GL_MODELVIEW);
+}
+
+void Model::flattenData()
+{
+	std::cout << "\t\t> (Flatenning data...)" << std::endl;
+	FlatData *fd = new FlatData();
+	this->flat = fd;
+	//tablica wierzcholkow
+	std::cout << "\t\t> (" << this->vertexCount << " vertices...)" << std::endl;
+
+	fd->vertCount = this->vertexCount;
+	fd->vert = new float[fd->vertCount * 4]; // x, y, z, w
+	fd->norm = new float[fd->vertCount * 4]; // x, y, z, w
+	fd->tex = new float[fd->vertCount * 2]; // x, y
+
+	for (int i = 0; i < fd->vertCount; i++)
+	{
+		fd->vert[4 * i + 0] = vertices[i].x;
+		fd->vert[4 * i + 1] = vertices[i].y;
+		fd->vert[4 * i + 2] = vertices[i].z;
+		fd->vert[4 * i + 3] = 1.0f;
+	}
+	for (int i = 0; i < this->normals.size(); i++)
+	{
+		fd->norm[4 * i + 0] = normals[i].x;
+		fd->norm[4 * i + 1] = normals[i].y;
+		fd->norm[4 * i + 2] = normals[i].z;
+		fd->norm[4 * i + 3] = 0.0f;
+	}
+	for (int i = 0; i < this->textures.size(); i++)
+	{
+		fd->tex[2 * i + 0] = textures[i].x;
+		fd->tex[2 * i + 1] = textures[i].y;
+	}
 }

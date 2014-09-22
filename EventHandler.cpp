@@ -39,7 +39,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	glm::vec3 observer = this->params->observer;
 	glm::vec3 nose = this->params->nose;
 	
-	
+	// move forward
 	if(c=='w')
 	{
 		this->temp = glm::normalize(glm::vec3(center.x,observer.y,center.z)-observer);
@@ -50,6 +50,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 			this->params->center+=this->temp*this->cameraSpeed;
 		}
 	}
+	//move backwards
 	else if(c=='s')
 	{
 		this->temp = glm::normalize(glm::vec3(center.x,observer.y,center.z)-observer);
@@ -60,6 +61,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 			this->params->center-=this->temp*this->cameraSpeed;
 		}
 	}
+	//move right
 	else if(c=='d')
 	{
 		this->temp = glm::normalize(center-observer);
@@ -72,6 +74,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 			this->params->center-=this->temp2*this->cameraSpeed;
 		}
 	}
+	//move left
 	else if(c=='a')
 	{
 		this->temp = glm::normalize(center-observer);
@@ -162,6 +165,7 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 		std::cin >> dec;
 		this->UpdateMover(-dec);
 	}
+	//print info about model matrix
 	else if (c == 'p')
 	{
 		this->params->modelMover->Print();
@@ -224,12 +228,13 @@ void EventHandler::KeyUp(unsigned char c, int x, int y)
 
 }
 
+// chodzenie strza³kami
 void EventHandler::SpecialKeyDown(int c,int x,int y)
 {
 	if(c==GLUT_KEY_UP)
-		this->KeyDown('w',x,y);
+		this->KeyDown('w', x, y);
 	else if(c==GLUT_KEY_DOWN)
-		this->KeyDown('s',x,y);
+		this->KeyDown('s', x, y);
 }
 
 void EventHandler::SpecialKeyUp(int c,int x,int y)

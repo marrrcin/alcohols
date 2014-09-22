@@ -5,6 +5,10 @@
 RoomModel::RoomModel(void)
 {
 	this->LoadModelFromObjFile("roomv3.obj");
+	std::cout << "\t\t > Room loaded from file!" << std::endl;
+
+	this->flattenData();
+
 	this->angle=99;
 	this->lastTime=0;
 	this->speed=90;
@@ -53,24 +57,15 @@ void RoomModel::Draw()
 	
 	glEnable(GL_COLOR_MATERIAL);
 	glColor3f(1.0f,1.0f,1.0f);
-	//glEnable(GL_LIGHT3);
-	glLightfv(GL_LIGHT3,GL_POSITION,this->lights.position);
-	//glLightfv(GL_LIGHT3,GL_AMBIENT,this->lights.ambient);
-	glLightfv(GL_LIGHT3,GL_DIFFUSE,this->lights.diffuse);
-	/*glLightfv(GL_LIGHT3,GL_SPOT_DIRECTION,this->lights.spotlightAt);
-	glLightf(GL_LIGHT3,GL_SPOT_EXPONENT,10.0f);
-	glLightf(GL_LIGHT3,GL_SPOT_CUTOFF,20.0f);*/
+
+	//glLightfv(GL_LIGHT3,GL_POSITION,this->lights.position);
+	//glLightfv(GL_LIGHT3,GL_DIFFUSE,this->lights.diffuse);
+
 	this->RenderObject();
-	
-	//glDisable(GL_LIGHT3);
 	
 }
 
 void RoomModel::NextFrame()
 {
-	/*int actTime=glutGet(GLUT_ELAPSED_TIME);
-	int interval=actTime-this->lastTime;
-	lastTime=actTime;
-	this->angle+=this->speed*interval/1000.0;
-	if (this->angle>360) this->angle-=360;*/
+
 }

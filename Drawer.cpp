@@ -8,8 +8,13 @@ Drawer::Drawer(EventParameters *params)
 {
 	ModelFactory modelFactory;
 	modelFactory.CreateObjectsToDraw(&(this->objectsToDraw));
+
+	std::cout << "\t> Objects created! Activating collidable objects..." << std::endl;
+
 	modelFactory.GetObjectsForCollisionsCheck(&(this->objectsToDraw), &(this->collidableObjects));
 	this->params = params;
+
+	std::cout << "\t> Assigning model mover..." << std::endl;
 	this->AssignModelMover();
 
 }
