@@ -93,19 +93,20 @@ void Drawer::Display()
 	M = glm::translate(M, glm::vec3(x, y, z));
 
 	glLoadMatrixf(glm::value_ptr(V * M));
-
+	glDisable(GL_FOG);
 	//wspó³czynnik zamglenia
 	float alpha = std::min(this->params->player->intoxicationLevel / 200.0, 1.5);
 
-	float fogColor[4] = { 0.25, 0.25, 0.3, 1.0 }; 
-	glFogi(GL_FOG_MODE, GL_LINEAR);
+	float fogColor[4] = { 0.25, 0.25, 0.3, 1.0 };
+	glFogi(GL_FOG_MODE, GL_EXP);
 	glFogfv(GL_FOG_COLOR, fogColor);
 	glFogf(GL_FOG_DENSITY, alpha);
-	glFogf(GL_FOG_START, 1.00f);
-	glFogf(GL_FOG_END, 20.00f);
+	glFogf(GL_FOG_START, 20.0f - std::min(this->params->player->intoxicationLevel / 10.0f, 19.9f));
+	glFogf(GL_FOG_END, 40.0f);
 	glFogf(GL_FOG_MODE, GL_LINEAR);
 	glEnable(GL_FOG);
-	
+	if (this->params->player->intoxicationLevel < 40)
+		glDisable(GL_FOG);
 	//na koncu szyby
 	this->objectsToDraw["glass"]->Draw();
 

@@ -39,7 +39,7 @@ void Absinthe::Draw()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadMatrixf(glm::value_ptr(*V**M));
 	glEnable(GL_COLOR_MATERIAL);
-	glColor3f(0.0f, 1.0f, 0.0f);
+	glColor3f(101/255.0f, 143/255.0f, 128/255.0f);
 	if (this->collisionDetected)
 		glColor3f(1.0f, 0.0f, 0.0f);
 	this->RenderObject();
