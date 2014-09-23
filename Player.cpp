@@ -5,6 +5,8 @@ Player::Player()
 {
 	this->intoxicationLevel = 0;
 	this->sobered = false;
+	this->goLeft = true; // w ktor¹ stronê siê zataczaæ najpierw (bêdzie siê zmieniaæ po zwolnieniu 'w')
+	this->stepsLeft = 30;
 }
 
 

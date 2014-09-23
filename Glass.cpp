@@ -40,7 +40,7 @@ void Glass::Draw()
 	glEnable( GL_BLEND );
 	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_LIGHT0);
-	glColor4f(199.0/255,201.0/255,254.0/255,0.9f);
+	glColor4f(199.0/255, 201.0/255, 254.0/255,0.9f);
 	glDisable(GL_COLOR_MATERIAL);
 	this->RenderObject();
 	glDisable(GL_BLEND);

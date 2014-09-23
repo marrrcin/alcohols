@@ -47,15 +47,33 @@ void EventHandler::KeyDown(unsigned char c, int x, int y)
 	glm::vec3 observer = this->params->observer;
 	glm::vec3 nose = this->params->nose;
 	
+
 	// utrudnione poruszanie do przodu
 	if (c == 'w')
 	{
-		//srand(time(NULL));
+		this->params->player->stepsLeft--;
+
+		//co 50 kroków zmieniaj kierunek zataczania siê
+		if (this->params->player->stepsLeft < 0)
+		{
+			this->params->player->goLeft = !this->params->player->goLeft;
+			this->params->player->stepsLeft = 50;
+		}
+
 		int randInt = rand() % 200;
-		char tab[] = { 'w', 'a', 'd' };
+		char tab[2];
+		tab[0] = 'w';
+
+		//zataczaj siê w lewo
+		if (this->params->player->goLeft)
+			tab[1] = 'a';
+		//zataczaj siê w prawo
+		else
+			tab[1] = 'd';
+
 		if (randInt < this->params->player->intoxicationLevel)
 		{
-			int randIndex = rand() % 3;
+			int randIndex = rand() % 2;
 			c = tab[randIndex];
 		}
 

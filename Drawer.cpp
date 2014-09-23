@@ -92,10 +92,18 @@ void Drawer::Display()
 	auto z = this->params->center.z;
 	M = glm::translate(M, glm::vec3(x, y, z));
 
-	glEnable(GL_COLOR_MATERIAL);
-	glColor3d(1, 0, 0);
 	glLoadMatrixf(glm::value_ptr(V * M));
+
 	// czerwone cos
+
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+	glEnable(GL_COLOR_MATERIAL);
+	glEnable(GL_LIGHT0);
+	glColor4f(199.0 / 255, 201.0 / 255, 254.0 / 255, 0.9f);
+	glDisable(GL_COLOR_MATERIAL);
+	glDisable(GL_BLEND);
+
 	glutSolidSphere(1.0f, 10, 10);
 	glDisable(GL_COLOR_MATERIAL);
 	
