@@ -104,6 +104,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Absinthe.cpp" />
     <ClCompile Include="Alcohol.cpp" />
     <ClCompile Include="alcohols.cpp" />
     <ClCompile Include="Barrel.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="WineBottle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Absinthe.h" />
     <ClInclude Include="Alcohol.h" />
     <ClInclude Include="alcohols.h" />
     <ClInclude Include="Barrel.h" />

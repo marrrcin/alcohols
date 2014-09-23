@@ -19,6 +19,7 @@
 #include "Cognac.h"
 #include "Vodka.h"
 #include "Champagne.h"
+#include "Absinthe.h"
 
 class ModelFactory
 {

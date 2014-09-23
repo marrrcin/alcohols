@@ -1,22 +1,22 @@
-#include "Champagne.h"
+#include "Absinthe.h"
 
-Champagne::Champagne()
+Absinthe::Absinthe()
 {
-	//this->LoadModelFromObjFile("champagne.obj");
-	//this->ExportLoadedMatrixesToFile("champagne");
-	this->QuickLoadFromFiles("champagne");
+	//this->LoadModelFromObjFile("absolut.obj");
+	//this->ExportLoadedMatrixesToFile("absinthe");
+	this->QuickLoadFromFiles("absinthe");
 	this->flattenData();
 
-	this->alcohol = new Alcohol(700, 10);
+	this->alcohol = new Alcohol(700, 80);
 }
 
 
-Champagne::~Champagne()
+Absinthe::~Absinthe()
 {
 	delete this->modelMatrix;
 }
 
-void Champagne::Draw()
+void Absinthe::Draw()
 {
 
 	this->LoadDefaultPerspectiveMatrix();
@@ -26,16 +26,16 @@ void Champagne::Draw()
 	this->modelMatrix = M;
 	*M = glm::scale(*M, glm::vec3(0.05f));
 	*M = glm::scale(*M, glm::vec3(0.15f));
-	*M = glm::scale(*M, glm::vec3(0.9f));
-	*M = glm::translate(*M, glm::vec3(-1000.0f, 630.0f, -250.0f));
-	/*
+	*M = glm::scale(*M, glm::vec3(1.3f));
+	*M = glm::translate(*M, glm::vec3(730.0f, 700.0f, 1000.0f));
+	
 	if (this->modelMover->isEnabled)
 	{
 	*M = this->modelMover->Scale(*M);
 	*M = this->modelMover->Rotate(*M);
 	*M = this->modelMover->Translate(*M);
 	}
-	*/
+	
 	glMatrixMode(GL_MODELVIEW);
 	glLoadMatrixf(glm::value_ptr(*V**M));
 	glEnable(GL_COLOR_MATERIAL);
@@ -46,7 +46,7 @@ void Champagne::Draw()
 	glDisable(GL_COLOR_MATERIAL);
 }
 
-void Champagne::NextFrame()
+void Absinthe::NextFrame()
 {
 
 }
