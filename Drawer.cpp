@@ -2,7 +2,7 @@
 #include "Drawer.h"
 #include "ModelMover.h"
 #include "ModelFactory.h"
-
+#include <algorithm>
 
 Drawer::Drawer(EventParameters *params)
 {
@@ -94,18 +94,17 @@ void Drawer::Display()
 
 	glLoadMatrixf(glm::value_ptr(V * M));
 
-	// czerwone cos
+	//wspó³czynnik zamglenia
+	float alpha = std::min(this->params->player->intoxicationLevel / 200.0, 1.5);
 
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glEnable(GL_BLEND);
-	glEnable(GL_COLOR_MATERIAL);
-	glEnable(GL_LIGHT0);
-	glColor4f(199.0 / 255, 201.0 / 255, 254.0 / 255, 0.9f);
-	glDisable(GL_COLOR_MATERIAL);
-	glDisable(GL_BLEND);
-
-	glutSolidSphere(1.0f, 10, 10);
-	glDisable(GL_COLOR_MATERIAL);
+	float fogColor[4] = { 0.25, 0.25, 0.3, 1.0 }; 
+	glFogi(GL_FOG_MODE, GL_LINEAR);
+	glFogfv(GL_FOG_COLOR, fogColor);
+	glFogf(GL_FOG_DENSITY, alpha);
+	glFogf(GL_FOG_START, 1.00f);
+	glFogf(GL_FOG_END, 20.00f);
+	glFogf(GL_FOG_MODE, GL_LINEAR);
+	glEnable(GL_FOG);
 	
 	//na koncu szyby
 	this->objectsToDraw["glass"]->Draw();
